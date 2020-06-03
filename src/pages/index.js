@@ -1,0 +1,92 @@
+// Gatsby supports TypeScript natively!
+import React from "react"
+import { PageProps, Link, graphql } from "gatsby"
+import Img from "gatsby-image"
+
+import Bio from "../components/bio"
+import Start from "../components/start"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import { rhythm } from "../utils/typography"
+
+const BlogIndex = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata.title
+  const posts = data.allMarkdownRemark.edges
+
+  return (
+    <Layout location={location} title={siteTitle}>
+      <SEO title="Home" />
+      <Start />
+      <h2>Most recently updated</h2>
+      {posts.map(({ node }) => {
+        const title = node.frontmatter.title || node.fields.slug
+        let cover =  node.frontmatter.cover
+        let coverBit 
+        if (cover) {
+          coverBit = <Img fluid={cover.childImageSharp.fluid} />
+        } else {
+          coverBit = null
+        }
+        
+        return (
+          <article key={node.fields.slug}>
+            <header>
+              <h3
+                style={{
+                  marginBottom: rhythm(1 / 4),
+                }}
+              >
+                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                  {title}
+                </Link>
+              </h3>
+            </header>
+            <section>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: node.frontmatter.description || node.excerpt,
+                }}
+              />
+              {coverBit}
+              
+            </section>
+          </article>
+        )
+      })}
+    </Layout>
+  )
+}
+
+export default BlogIndex
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 630) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
@@ -9,6 +8,7 @@ import { rhythm, scale } from "../utils/typography"
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
+  const twitter = data.site.siteMetadata.social.twitter
   const { previous, next } = pageContext
 
   return (
@@ -43,10 +43,20 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             marginBottom: rhythm(1),
           }}
         />
-        <footer>
-          <Bio />
-        </footer>
       </article>
+
+      <div id="comments" 
+            style={{
+              marginTop: rhythm(1),
+              marginBottom: rhythm(1),
+            }}>
+              If you want to comment <a href={`https://twitter.com/${twitter}`}>say hello on Twitter.</a>
+      </div>
+      <hr
+          style={{
+            marginBottom: rhythm(1),
+          }}
+        />
 
       <nav>
         <ul
@@ -85,12 +95,16 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        social {
+          twitter
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
       html
+      tableOfContents
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
