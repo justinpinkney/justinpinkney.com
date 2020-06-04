@@ -1,12 +1,14 @@
 ---
-title: Start
+title: Hello 👋
+date: "2020-06-01"
+description: " "
 ---
 
-This is the place you could start
+# Hello!
 
-I can do somthing here
+I'm Justin Pinkney and this is my home on the web.
 
-- like this
-- list
-- [end](../broken)
+I'm interested in 
+
+- Generative Art
 - [Deep Learning](../deep-learning/)

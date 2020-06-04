@@ -23,7 +23,7 @@ const BlogIndex = ({ data, location }) => {
         let cover =  node.frontmatter.cover
         let coverBit 
         if (cover) {
-          coverBit = <Img fluid={cover.childImageSharp.fluid} />
+          coverBit = <Img fluid={{...cover.childImageSharp.fluid, aspectRatio: 6}} />
         } else {
           coverBit = null
         }
@@ -33,7 +33,7 @@ const BlogIndex = ({ data, location }) => {
             <header>
               <h3
                 style={{
-                  marginBottom: rhythm(1 / 4),
+                  marginBottom: rhythm(1/8),
                 }}
               >
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
@@ -42,12 +42,16 @@ const BlogIndex = ({ data, location }) => {
               </h3>
             </header>
             <section>
-              <p
+              <p style={{
+                  marginBottom: rhythm(1 / 4),
+                }}
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}
               />
-              {coverBit}
+              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                {coverBit}
+              </Link>
               
             </section>
           </article>

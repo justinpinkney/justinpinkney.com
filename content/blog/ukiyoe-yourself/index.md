@@ -84,7 +84,7 @@ While I'm at it, a CycleGAN trained to turn Ukiyo-e faces into real ones does gi
 
 
 <p align="center">
-<video controls src="ukiyoe_face.mp4"></video>
+<video controls src="ukiyoe_face.mp4" width=100%></video>
 </p>
 
 Currently my "layer swapping" is just a straight copy of the weights of certain layers of one model to the other. But this leads to a harsh transition in the model. Maybe a smoother transition would give nicer results, for example gradual interpolating from one model to the other as you move through the layers

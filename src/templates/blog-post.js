@@ -49,14 +49,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             style={{
               marginTop: rhythm(1),
               marginBottom: rhythm(1),
+              textAlign: "right",
             }}>
-              If you want to comment <a href={`https://twitter.com/${twitter}`}>say hello on Twitter.</a>
+              💬 If you want to comment <a href={`https://twitter.com/${twitter}`}>say hello on Twitter.</a>
       </div>
-      <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
 
       <nav>
         <ul

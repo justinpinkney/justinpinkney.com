@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 const Start = () => {
   const data = useStaticQuery(graphql`
     query StartQuery {
-        markdownRemark(frontmatter: {title: {eq: "Start"}}) {
+        markdownRemark(frontmatter: {title: {eq: "Hello 👋"}}) {
         html
         }
     }

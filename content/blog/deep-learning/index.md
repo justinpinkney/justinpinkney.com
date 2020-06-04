@@ -1,5 +1,5 @@
 ---
-title: Deep Learning
+title: Deep Learning 🧠
 date: "2020-06-02"
 ---
 
