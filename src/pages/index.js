@@ -17,7 +17,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" />
       <Start />
-      <h2>Most recently updated</h2>
+      <h3>Most recently updated pages:</h3>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         let cover =  node.frontmatter.cover

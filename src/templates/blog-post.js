@@ -27,24 +27,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.title}
           </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
+        
+      </article>
+<hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
-      </article>
-
       <div id="comments" 
             style={{
               marginTop: rhythm(1),
@@ -98,9 +89,7 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 160)
       html
-      tableOfContents
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

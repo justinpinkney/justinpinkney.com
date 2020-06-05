@@ -30,7 +30,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          "gatsby-remark-images-grid",
+          `gatsby-remark-images-grid`,
           {
             resolve: `gatsby-remark-images`,
           },
@@ -42,7 +42,14 @@ module.exports = {
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`
+          `gatsby-remark-smartypants`,
+          {
+            resolve: `gatsby-remark-wiki-link`,
+            options: {
+              hrefTemplate: (permalink) => permalink,
+              pageResolver: (name) => [name.replace(/ /g, '-').toLowerCase()],
+            }
+          }
         ]
       }
     },
