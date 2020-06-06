@@ -9,3 +9,8 @@ body {
 #start ul li {
   margin-bottom: 0px;
 }
+
+a[href*="//"]:not([href*="justinpinkney.com"])::after {
+  /* https://stackoverflow.com/a/5379820 */
+  content: "↗️";
+}
