@@ -5,10 +5,20 @@
 		"body": [
 		  "---",
 		  "title: $1",
-		  "date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+		  "date: \"$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE\"",
 		  "description: $2",
 		  "---"
 		],
 		"description": "frontmatter block for gatsby"
+	  },
+
+	  "video": {
+		  "prefix": "vid",
+		  "body": [
+			  "<p align=\"center\">",
+			  "<video controls src=\"$1.mp4\" width=100%></video>",
+			  "</p>",
+		  ],
+		  "description": "insert video html block"
 	  },
 }
