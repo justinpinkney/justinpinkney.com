@@ -10,8 +10,8 @@ I'm currently a senior consultant at MathWorks helping people to: develop comput
 
 As part of my job I've been able to release some open source projects:
 
+- [[matlab-pix2pix:pix2pix - Image to image translation with GANs]]
 - [[matlab-mtcnn:MTCNN - Deep learning face detection]]
-- [[matlab-pix2pix:pix2pix - Image to Image translation with GANs]]
 
 ## Sagentia
 

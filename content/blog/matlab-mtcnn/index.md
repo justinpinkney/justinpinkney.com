@@ -5,8 +5,6 @@ description: Fast and accurate face detection and alignment in MATLAB with neura
 cover: trek-faces.jpg
 ---
 
-<br /><br />
-
 __Get a fast and accurate face and facial feature detector for MATLAB [here](https://github.com/matlab-deep-learning/mtcnn-face-detection/releases)__
 
 <p align="center">
@@ -25,7 +23,7 @@ Although MATLAB has a face detector built into the Computer Vision Toolbox I'm s
 
 There are now tons of deep learning based face detectors, each of them eeking out more and more performance on standard benchmarks. But sometimes you just want something that is pretty good and well tested in real life.
 
-![](trek-faces.jpg)
+![Image source: NASA](trek-faces.jpg)
 
 Multi-task Cascaded Convolutional Neural Network (MTCNN) is a little old but has a fairly simple architecture, is small and fast, and performs well. It also has the additional advantage of outputting the locations of facial features (eyes nose and mouth). It's been widely used for a pre-processing step in lots of other applications and it works well and reliably.
 

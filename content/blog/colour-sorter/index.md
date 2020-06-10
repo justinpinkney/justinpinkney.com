@@ -5,8 +5,6 @@ description: Takes a picture and rearranges the pixels to make another
 cover: 2.jpg
 ---
 
-<br />
-
 ![](ColourSorterLogo.jpg)
 __Takes a picture and rearranges the pixels to make another.__
 
