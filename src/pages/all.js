@@ -3,8 +3,6 @@ import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import Bio from "../components/bio"
-import Start from "../components/start"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
@@ -15,48 +13,29 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Home" />
-      <Start />
-      <h3>Most recently updated pages:</h3>
+      <SEO title="All posts" />
+      <h1>All posts</h1>
+
+      <ul>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
-        let cover =  node.frontmatter.cover
-        let coverBit 
-        if (cover) {
-          coverBit = <Img fluid={{...cover.childImageSharp.fluid, aspectRatio: 6}} />
-        } else {
-          coverBit = null
-        }
         
         return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1/8),
-                }}
-              >
+              <li key={node.fields.slug}>
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
-              </h3>
-            </header>
-            <section>
-              <p style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
+              
+              <p
                 dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
+                  __html: node.frontmatter.description,
                 }}
               />
-              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                {coverBit}
-              </Link>
-              
-            </section>
-          </article>
+              </li>
+          
         )
       })}
+      </ul>
     </Layout>
   )
 }
@@ -70,7 +49,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___title], order: ASC }) {
       edges {
         node {
           excerpt
@@ -83,7 +62,7 @@ export const pageQuery = graphql`
             description
             cover {
               childImageSharp {
-                fluid(maxWidth: 800) {
+                fluid(maxWidth: 630) {
                   ...GatsbyImageSharpFluid
                 }
               }

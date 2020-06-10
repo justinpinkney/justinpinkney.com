@@ -12,5 +12,11 @@ body {
 
 a[href*="//"]:not([href*="justinpinkney.com"])::after {
   /* https://stackoverflow.com/a/5379820 */
-  content: "↗️";
+  content: "↗";
+}
+
+figcaption {
+  color: grey;
+  text-align: center;
+  margin-top: 20px;
 }

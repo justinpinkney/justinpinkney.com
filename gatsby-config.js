@@ -30,9 +30,20 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-embed-video`,
+            options: {
+              width: 800,
+              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
+            }
+          },
           `gatsby-remark-images-grid`,
           {
             resolve: `gatsby-remark-images`,
+            options: {
+              showCaptions: true,
+              maxWidth: 800,
+            }
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
@@ -46,7 +57,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-wiki-link`,
             options: {
-              hrefTemplate: (permalink) => permalink,
+              hrefTemplate: (permalink) => `../${permalink}`,
               pageResolver: (name) => [name.replace(/ /g, '-').toLowerCase()],
             }
           }
@@ -58,7 +69,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-56611154-3`,
       }
     },
     `gatsby-plugin-feed`,
