@@ -22,11 +22,21 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <h1
             style={{
               marginTop: rhythm(1),
-              marginBottom: rhythm(2),
+              marginBottom: 0,
             }}
           >
             {post.frontmatter.title}
           </h1>
+          <p
+            style={{
+              ...scale(-1 / 4),
+              display: `block`,
+              marginBottom: rhythm(1),
+              color: `#888`
+            }}
+          >
+            Last touched {post.frontmatter.date}
+          </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         

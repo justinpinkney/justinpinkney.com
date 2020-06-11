@@ -4,12 +4,8 @@ date: "2020-06-02"
 description: " "
 ---
 
-Here is a thing I did with deep learning
+I do lots of deep learning both at [[day-job:work]] and home, here are some related posts:
 
 - [[Ukiyoe yourself]]
-
-Sections could be
-
-- Creative uses of deep learning
-- MATLAB
-- GAN things
+- [[matlab-pix2pix:pix2pix - Image to image translation with GANs]]
+- [[matlab-mtcnn:MTCNN - Deep learning face detection for MATLAB]]

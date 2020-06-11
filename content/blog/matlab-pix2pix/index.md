@@ -1,6 +1,6 @@
 ---
 title: MATLAB pix2pix 🏢
-date: "2020-06-10"
+date: "2020-06-09"
 description: Image to image translation with GANs
 cover: result.jpg
 ---

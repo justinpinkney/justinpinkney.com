@@ -13,10 +13,10 @@ As part of my job I've been able to release some open source projects:
 - [[matlab-pix2pix:pix2pix - Image to image translation with GANs]]
 - [[matlab-mtcnn:MTCNN - Deep learning face detection]]
 
-## Sagentia
+<hr>
 
-I used to work at a product development consultancy called Sagentia.
+## Before
 
-## PhD
+__Sagentia__ - I used to work at a product development consultancy called Sagentia.
 
-Before I had a real job I did a PhD in [[Biophysics]] at the University of Oxford.
+__PhD__ - Before I had a real job I did a PhD in [[Biophysics]] at the University of Oxford.
