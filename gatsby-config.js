@@ -6,7 +6,7 @@ module.exports = {
       summary: `making things`
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    siteUrl: `https://www.justinpinkney.com/`,
     social: {
       twitter: `buntworthy`
     }
