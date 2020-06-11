@@ -10,12 +10,17 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const twitter = data.site.siteMetadata.social.twitter
   const { previous, next } = pageContext
+  const image = post.frontmatter.image
+      ? post.frontmatter.image.childImageSharp.resize
+      : null
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        image={image}
+        pathname={data.slug}
       />
       <article>
         <header>
@@ -41,7 +46,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         
       </article>
-<hr
+      <hr
           style={{
             marginBottom: rhythm(1),
           }}
