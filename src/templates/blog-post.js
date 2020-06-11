@@ -10,8 +10,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const twitter = data.site.siteMetadata.social.twitter
   const { previous, next } = pageContext
-  const image = post.frontmatter.image
-      ? post.frontmatter.image.childImageSharp.resize
+  const image = post.frontmatter.cover
+      ? post.frontmatter.cover.childImageSharp.resize
       : null
 
   return (
