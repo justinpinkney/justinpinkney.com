@@ -5,7 +5,7 @@ module.exports = {
       name: `Justin Pinkney`,
       summary: `making things`
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Justin Pinkney's home on the web`,
     siteUrl: `https://www.justinpinkney.com/`,
     social: {
       twitter: `buntworthy`
@@ -76,8 +76,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Justin Pinkney's home`,
+        short_name: `justinpinkney`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
