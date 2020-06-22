@@ -30,7 +30,7 @@ Eventually the model basically learns not to have frontal faces and interpolatio
 
 
 <p align="center">
-<video controls src="ukiyoe-interpolation.mp4" width=100%></video>
+<video controls src="ukiyoe-interpolation.mp4"></video>
 </p>
 
 ## Ukiyo-e yourself
@@ -46,7 +46,7 @@ This early stage of training seems like it might be a promising way of creating 
 Playing with well known technique of averaging the weights of the base and the transferred model helps get a bit closer to the original, but the pose is still way off. Here's a few frames of interpolation from the weights of one model to another   
 
 <p align="center">
-<video controls src="averaging.mp4" width=100%></video>
+<video controls src="averaging.mp4"></video>
 </p>
 
 ### Layer Swapping
@@ -54,7 +54,7 @@ Playing with well known technique of averaging the weights of the base and the t
 So I've also been playing with something you could call "layer swapping". Taking different resolution layers from the different models and combining them. This helps to avoid changing the pose (which is controlled by early, low resolution layers). Here's an animation as I progressively swap in more layers from the original FFHQ model into the ukiyo-e model.
 
 <p align="center">
-<video controls src="swapping.mp4" width=100%></video>
+<video controls src="swapping.mp4"></video>
 </p>
 
 Swapping in only the lower resolution layers from FFHQ into Ukiyo-e serves to preserve the pose of the generated face, but still transfer the features and style of a typical ukiyo-e portrait. Here's a detail of the point at which I think it looks best.
@@ -63,7 +63,6 @@ Swapping in only the lower resolution layers from FFHQ into Ukiyo-e serves to pr
 
 There are still some artifacts but I think it's a fun technique and sometimes gives some nice results. Here are a bunch more cherry picked examples:
 
-```grid|2
 ![](./examples/seed0014.png.jpg)
 ![](./examples/seed0005.png.jpg)
 ![](./examples/seed0034.png.jpg)
@@ -72,7 +71,6 @@ There are still some artifacts but I think it's a fun technique and sometimes gi
 ![](./examples/seed0089.png.jpg)
 ![](./examples/seed0092.png.jpg)
 ![](./examples/seed0094.png.jpg)
-```
 
 ## Other thoughts
 
@@ -84,7 +82,7 @@ While I'm at it, a CycleGAN trained to turn Ukiyo-e faces into real ones does gi
 
 
 <p align="center">
-<video controls src="ukiyoe_face.mp4" width=100%></video>
+<video controls src="ukiyoe_face.mp4"></video>
 </p>
 
 Currently my "layer swapping" is just a straight copy of the weights of certain layers of one model to the other. But this leads to a harsh transition in the model. Maybe a smoother transition would give nicer results, for example gradual interpolating from one model to the other as you move through the layers

@@ -26,10 +26,12 @@ module.exports = {
         name: `assets`
       }
     },
+    `gatsby-remark-images`, 
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-embed-video`,
             options: {
@@ -55,7 +57,7 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           {
-            resolve: `gatsby-remark-wiki-link`,
+            resolve: require.resolve('./plugins/gatsby-remark-wiki-link'),
             options: {
               hrefTemplate: (permalink) => `../${permalink}`,
               pageResolver: (name) => [name.replace(/ /g, '-').toLowerCase()],
@@ -72,7 +74,6 @@ module.exports = {
         trackingId: `UA-56611154-3`,
       }
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

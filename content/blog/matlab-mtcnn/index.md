@@ -8,7 +8,7 @@ cover: trek-faces.jpg
 __Get a fast and accurate face and facial feature detector for MATLAB [here](https://github.com/matlab-deep-learning/mtcnn-face-detection/releases)__
 
 <p align="center">
-<video controls src="pretty-good.mp4" width=100%></video>
+<video controls src="pretty-good.mp4"></video>
 </p>
 
 ## Intro

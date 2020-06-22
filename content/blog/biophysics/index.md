@@ -14,7 +14,7 @@ A bit more specifically I used single molecule methods such as FRET (Forster res
 This was where I first started to write code in earnest, learnt the appeal of building tools and methods, started processing images, and got to play with lasers.
 
 <p align="center">
-<video controls src="microscope-building.mp4" width=100% loop=True></video>
+<video controls src="microscope-building.mp4" loop="true"></video>
 </p>
 
 Here are the papers I published back then:
