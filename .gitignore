@@ -1,3 +1,9 @@
+known_hosts
+
+# python related
+__pycache__/
+venv/
+
 # Logs
 logs
 *.log

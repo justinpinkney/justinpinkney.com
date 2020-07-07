@@ -19,9 +19,10 @@ const StreamIndex = ({ data, location }) => {
         { ims.map(( node ) => {
           return (
               <div style={{ width: "100%" }}>
-                  <Img 
-                      fluid={node.image.childImageSharp.fluid}
+                <Link to={node.id}>
+                  <Img fluid={node.image.childImageSharp.fluid}
                       alt="" />
+                </Link>
               </div>
           )
         }
@@ -35,9 +36,8 @@ export default StreamIndex
 
 export const pageQuery = graphql`
     query StreamQuery {
-        allStreamJson {
+        allStreamJson(sort: {fields: [date], order: DESC}) {
             nodes {
-                path
                 id
                 image {
                   childImageSharp {

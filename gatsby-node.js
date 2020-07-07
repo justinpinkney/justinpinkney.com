@@ -22,8 +22,6 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         },
       
-      
-      
         stream: allStreamJson(sort: {fields: [date], order: DESC}, limit: 1000) {
           edges {
             node {

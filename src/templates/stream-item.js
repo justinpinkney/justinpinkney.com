@@ -18,6 +18,35 @@ const StreamItemTemplate = ({ data, pageContext, location }) => {
             fluid={data.streamJson.image.childImageSharp.fluid}
             alt="" />
       </article>
+
+
+      <nav>
+        <ul
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `space-between`,
+            listStyle: `none`,
+            padding: 0,
+          }}
+        >
+          <li>
+            {previous && (
+              <Link to={previous.id} rel="prev">
+                previous
+              </Link>
+            )}
+          </li>
+          <li>
+            {next && (
+              <Link to={next.id} rel="next">
+                next
+              </Link>
+            )}
+          </li>
+        </ul>
+      </nav>
+
     </Layout>
   )
 }
@@ -37,10 +66,10 @@ export const itemQuery = graphql`
     streamJson(id: { eq: $id }) {
       id
       image {
-          childImageSharp {
-        fluid(maxWidth: 600) {...GatsbyImageSharpFluid}
+        childImageSharp {
+          fluid(maxWidth: 800) {...GatsbyImageSharpFluid}
         }
-        }
+      }
     }
   }
 `
