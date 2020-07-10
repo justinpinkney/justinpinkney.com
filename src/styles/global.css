@@ -24,3 +24,7 @@ figcaption {
 article video {
   width: 100%;
 }
+
+.leaflet-container {
+  height:100%;  
+}

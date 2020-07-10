@@ -95,6 +95,7 @@ module.exports = {
     },
     `gatsby-plugin-catch-links`,
     `@pauliescanlon/gatsby-mdx-embed`,
+    `gatsby-plugin-react-leaflet`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
