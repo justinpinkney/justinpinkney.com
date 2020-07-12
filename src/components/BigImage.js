@@ -1,13 +1,13 @@
 
 import React, { Component } from 'react'
 import { Map, TileLayer } from 'react-leaflet'
-import { CRS } from 'leaflet'
+import L from 'leaflet'
 
 export default class BigImage extends Component {
   render() {
     let { options } = this.props
     const mapClassName = "bigimage"
-    options.crs = CRS.Simple
+    options.crs = L.CRS.Simple
 
     if (typeof window !== 'undefined') {
       return (
