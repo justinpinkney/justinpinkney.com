@@ -7,9 +7,9 @@ export default class BigImage extends Component {
   render() {
     let { options } = this.props
     const mapClassName = "bigimage"
-    options.crs = L.CRS.Simple
 
     if (typeof window !== 'undefined') {
+      options.crs = L.CRS.Simple
       return (
         <div className={mapClassName} style={{height:"500px"}}>
           <Map {...options}>
