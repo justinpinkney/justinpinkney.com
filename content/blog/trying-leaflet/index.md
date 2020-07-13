@@ -1,6 +1,6 @@
 ---
 title: Big images with Leaflet 🗺️
-date: "2020-07-10"
+date: "2020-07-13"
 description: Incorporating big zoomable images into an MDX blog with Leaflet
 cover: leaflet.jpg  
 ---
@@ -15,7 +15,7 @@ __Below is a big image produced by my neural network feature visalisation librar
 
 <br />
 
-This page is mostly just a test of the integration of Leaflet for displaying big images on my Gatsby powered homepage, but there are some details on how this works below.
+This page is mostly just a test of the integration of Leaflet for displaying big images on my Gatsby powered homepage. Below are some brief scratchings on how this works so I don't forget.
 
 ## What is MDX actually good for?
 
@@ -47,10 +47,14 @@ Leaflet then provides a pan and zoomable display of the image. Leaflet is normal
 
 _One small issue with the above is that Leaflet doesn't like fractional tiles so there are currently some weird edge effects which I could solve by making sure I pad all the tiles to the full dimensions._
 
-Incorporating leaflet into a Gatsby site is happily very simple thanks to the [Gatsby React-Leaflet plugin](https://github.com/dweirich/gatsby-plugin-react-leaflet) which takes care of properly wrapping up the existing React-leaflet library (which itself makes Leaflet accessible as React components). (I started off trying to use OpenSeadragon, but with no existing Gatsby integration it seemed like the harder option.) Writing the react component required to display the image is very straightforward and then I can directly write the following in my markdown file to give the zoomable image at the top of the page.
+Incorporating leaflet into a Gatsby site is happily very simple[^1] thanks to the [Gatsby React-Leaflet plugin](https://github.com/dweirich/gatsby-plugin-react-leaflet) which takes care of properly wrapping up the existing React-leaflet library (which itself makes Leaflet accessible as React components). Writing the r[eact component required to display the image](https://github.com/justinpinkney/justinpinkney.com/blob/master/src/components/BigImage.js) is very straightforward and then I can directly write the following in my markdown file to give the zoomable image at the top of the page.
 
 ```markdown
 <BigImage 
     options={ {center:[-0.25, 0.35], zoom:10, minZoom:9, maxZoom:14 } } 
     tile_url="http://assets.justinpinkney.com/sandbox/montage/montage_files/{z}/{x}_{y}.jpg" />
 ```
+
+One simple gotcha is highlighted on [gatsby-plugin-react-leaflet's readme](https://github.com/dweirich/gatsby-plugin-react-leaflet#step-3). Make sure any usage of leaflet or react-leaflet are wrapped in a check that the window is defined. During build time the plugin will [stub out the leaflet loader](https://www.gatsbyjs.org/docs/debugging-html-builds/#fixing-third-party-modules) so any imports will return an undefined, and if you try and use these during build time (rather than run time, which is what the window check above ensures) you are likely to get x is undefined type errors.
+
+[^1]:  I actually started off trying to use [OpenSeadragon](https://openseadragon.github.io/) which has a much smoother pan and zoom action, but with no existing Gatsby integration it seemed like the harder option to start with.

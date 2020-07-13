@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import { Map, TileLayer } from 'react-leaflet'
-import * as L from 'leaflet'
+import { CRS } from 'leaflet'
 
 export default class BigImage extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class BigImage extends Component {
     const mapClassName = "bigimage"
 
     if (typeof window !== 'undefined') {
-      options.crs = L.CRS.Simple
+      options.crs = CRS.Simple
       return (
         <div className={mapClassName} style={{height:"500px"}}>
           <Map {...options}>
