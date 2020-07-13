@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import { Map, TileLayer } from 'react-leaflet'
-import L from 'leaflet'
+import * as L from 'leaflet'
 
 export default class BigImage extends Component {
   render() {
