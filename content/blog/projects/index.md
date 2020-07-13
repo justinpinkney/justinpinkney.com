@@ -8,6 +8,8 @@ I spend lots of my time playing with and making things. Some I might even call "
 
 Here's a list of some that might make the grade:
 
+- [[pretrained-stylegan:Awesome pretrained StyleGAN collections]]
 - [[matlab-pix2pix:pix2pix - Image to image translation with GANs]]
 - [[matlab-mtcnn:MTCNN - Deep learning face detection for MATLAB]]
 - [[progress:Progress - Command line progress indicators for MATLAB]]
+- [[This site]]
