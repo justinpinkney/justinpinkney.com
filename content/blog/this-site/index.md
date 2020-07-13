@@ -17,4 +17,6 @@ The site is built with [Gatsby](https://www.gatsbyjs.org/) and will give me some
 - [MDX embed](https://github.com/PaulieScanlon/gatsby-mdx-embed) - for embedding tweets and other things
 - [Leaflet](https://leafletjs.com/) - for [[trying-leaflet:displaying big images]]
 - [gatsby-plugin-react-leaflet](https://github.com/dweirich/gatsby-plugin-react-leaflet) - for working with leaflet
-- [Littlefoot](https://github.com/goblindegook/littlefoot) - for foot note pop overs
+- [Littlefoot](https://github.com/goblindegook/littlefoot) - for foot note pop overs[^1]
+
+[^1]: Getting Littlefoot to work correctly on the Gatsby production build actually requires something a little different to that described in the readme, see [this issue](https://github.com/goblindegook/littlefoot/issues/338).

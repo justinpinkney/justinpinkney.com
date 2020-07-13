@@ -6,7 +6,7 @@ import "prismjs/themes/prism.css"
 import "./src/styles/global.css"
 
 import littlefoot from 'littlefoot'
-import 'littlefoot/dist/littlefoot.css'
+require("littlefoot/dist/littlefoot.css");
 
 const template = `<button
 aria-expanded="false"
