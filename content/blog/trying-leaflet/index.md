@@ -11,7 +11,7 @@ __Below is a big image produced by my neural network feature visalisation librar
 
 <BigImage 
     options={ {center:[-0.25, 0.35], zoom:10, minZoom:9, maxZoom:14 } } 
-    tile_url="http://assets.justinpinkney.com/sandbox/montage/montage_files/{z}/{x}_{y}.jpg" />
+    tile_url="https://assets.justinpinkney.com/sandbox/montage/montage_files/{z}/{x}_{y}.jpg" />
 
 <br />
 
