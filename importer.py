@@ -31,7 +31,7 @@ def store_file(hash_id, file_path):
     with pysftp.Connection(host=host,username=username,password=password,cnopts=cnopts) as server:
         server.put(file_path, remote_path)
 
-    return "http://" + remote_path
+    return "https://" + remote_path
 
 def load_db():    
     json_path = STORAGE_PATH/"db.json"
@@ -83,6 +83,10 @@ def store_image(hash_id, im, base_directory):
 
     return filename
 
+def is_present(db, hash_id):
+    """Check if a given hash_id is already in the database"""
+    return len(db.search(Query().id == hash_id)) > 0
+
 def main(import_dir):
     """Import a directory into the database"""
     db = load_db()
@@ -101,7 +105,9 @@ def main(import_dir):
             print(f"Not importing {file_path}")
             continue
 
-        # if it's not a dupe
+        if is_present(db, hash_id):
+            continue
+
         stored_file_path = store_image(hash_id, im, STORAGE_PATH)
 
         t = os.path.getmtime(file_path)

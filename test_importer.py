@@ -40,9 +40,15 @@ def test_store_image(tmp_path):
 
 def test_main(tmp_path):
     expected_1 = {"id": "44da489ff3dab4becc5bc467c86d2c93",
-                    "image": "44da489ff3dab4becc5bc467c86d2c93.jpg"}
+                    "image": "44da489ff3dab4becc5bc467c86d2c93.jpg",
+                    "date": "2020-07-15",
+                    "remote_path": "",
+                    }
     expected_2 = {"id": "f85fe02c1025a903c0307113a6d9253c",
-                    "image": "f85fe02c1025a903c0307113a6d9253c.jpg"}
+                    "image": "f85fe02c1025a903c0307113a6d9253c.jpg",
+                    "date": "2020-07-15",
+                    "remote_path": "",
+                    }
 
     import_dir = Path("test-data")
     importer.STORAGE_PATH = tmp_path
@@ -51,5 +57,30 @@ def test_main(tmp_path):
     db = importer.load_db()
     all_entries = db.all()
 
-    assert len(all_entries) > 0
+    assert len(all_entries) == 3 # 2 images above and a video
     assert expected_1 in all_entries
+    assert expected_2 in all_entries
+
+def test_dont_add_dupes(tmp_path):
+    expected_1 = {"id": "44da489ff3dab4becc5bc467c86d2c93",
+                    "image": "44da489ff3dab4becc5bc467c86d2c93.jpg",
+                    "date": "2020-07-15",
+                    "remote_path": "",
+                    }
+    expected_2 = {"id": "f85fe02c1025a903c0307113a6d9253c",
+                    "image": "f85fe02c1025a903c0307113a6d9253c.jpg",
+                    "date": "2020-07-15",
+                    "remote_path": "",
+                    }
+
+    import_dir = Path("test-data")
+    importer.STORAGE_PATH = tmp_path
+    importer.main(import_dir)
+    importer.main(import_dir)
+
+    db = importer.load_db()
+    all_entries = db.all()
+
+    assert len(all_entries) == 3 # 2 images above and a video
+    assert expected_1 in all_entries
+    assert expected_2 in all_entries
