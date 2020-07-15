@@ -13,13 +13,13 @@ const StreamIndex = ({ data, location }) => {
     <Layout location={location} title="gd">
       <div class="content" 
         style={{display:"grid", 
-                gridTemplateColumns:"1fr 1fr 1fr",
+                gridTemplateColumns:"repeat(auto-fit, minmax(150px, 1fr))",
                 columnGap:"10px",
                 rowGap:"10px"}}>
         { ims.map(( node ) => {
           return (
               <div style={{ width: "100%" }}>
-                <Link to={node.id}>
+                <Link to={"stream/" + node.id}>
                   <Img fluid={node.image.childImageSharp.fluid}
                       alt="" />
                 </Link>

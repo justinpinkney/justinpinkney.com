@@ -32,14 +32,14 @@ const StreamItemTemplate = ({ data, pageContext, location }) => {
         >
           <li>
             {previous && (
-              <Link to={previous.id} rel="prev">
+              <Link to={"stream/" + previous.id} rel="prev">
                 previous
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.id} rel="next">
+              <Link to={"stream/" + next.id} rel="next">
                 next
               </Link>
             )}

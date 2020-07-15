@@ -64,7 +64,7 @@ exports.createPages = async ({ graphql, actions }) => {
         const next = index === 0 ? null : streamPosts[index - 1].node
 
         createPage({
-          path: post.node.id,
+          path: "stream/" + post.node.id,
           component: streamItem,
           context: {
             id: post.node.id,

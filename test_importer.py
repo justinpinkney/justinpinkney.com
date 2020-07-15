@@ -19,8 +19,14 @@ def test_parse_image_resize_image():
 
     assert image.size == (importer.MAX_RESOLUTION, importer.MAX_RESOLUTION)
 
+def test_parse_video():
+    test_file = "test-data/flowers1.mp4"
+    hash_id, image = importer.parse_video(test_file)
 
-def test_store_image(tmp_path):
+    assert isinstance(image, Image.Image)
+    assert isinstance(hash_id, str)
+
+def test_store_image(tmp_path): 
     hash_id = "abc"
     im = Image.new("RGB", (100, 100))
 

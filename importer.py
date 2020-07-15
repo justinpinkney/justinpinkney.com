@@ -1,12 +1,14 @@
 from pathlib import Path
 import sys
-from tinydb import TinyDB, Query
-from PIL import Image
 import json
 import hashlib
 import os
 import datetime
+
+from tinydb import TinyDB, Query
+from PIL import Image
 import pysftp
+import imageio
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -45,7 +47,23 @@ def get_hash(file_path):
 
 
 def parse_image(file_path):
+    """Get the hash and resized version of an image"""
     im = Image.open(file_path)
+
+    if any([x > MAX_RESOLUTION for x in im.size]):
+        im.thumbnail((MAX_RESOLUTION, MAX_RESOLUTION))
+    
+    hash_id = get_hash(file_path)
+    
+    return hash_id, im
+
+
+def parse_video(file_path):
+    """Get the hash and preview image of a video"""
+    reader = imageio.get_reader(file_path)
+    n_frames = reader.get_length()
+    target_frame = min(30, n_frames)
+    im = Image.fromarray(reader.get_data(target_frame))
 
     if any([x > MAX_RESOLUTION for x in im.size]):
         im.thumbnail((MAX_RESOLUTION, MAX_RESOLUTION))
@@ -77,7 +95,7 @@ def main(import_dir):
         if file_path.suffix in image_types:
             hash_id, im = parse_image(file_path)
         elif file_path.suffix in video_types:
-            hash_id, im = import_video(file_path)
+            hash_id, im = parse_video(file_path)
             remote_storage = True
         else:
             print(f"Not importing {file_path}")
@@ -92,13 +110,15 @@ def main(import_dir):
         entry = {"id": hash_id, 
                  "image": str(stored_file_path), 
                 "date": str(t),
-                "remote_path", ""}
+                "remote_path": "",
+                }
 
         if remote_storage:
-            entry["remote_path"] = store_file(hash_id, file_path)
+            print("todo storage")
+            #entry["remote_path"] = store_file(hash_id, file_path)
             
 
-        db.insert()
+        db.insert(entry)
 
 def export():
     """Export to plain json file."""
