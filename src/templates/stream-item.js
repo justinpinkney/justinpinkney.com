@@ -11,12 +11,20 @@ const StreamItemTemplate = ({ data, pageContext, location }) => {
   const twitter = data.site.siteMetadata.social.twitter
   const { previous, next } = pageContext
 
+  let content
+
+  if (data.streamJson.type === "image") {
+    content = <Img 
+                fluid={data.streamJson.image.childImageSharp.fluid}
+                alt="" />
+  } else if (data.streamJson.type === "video") {
+    content = <video controls src={data.streamJson.remote_path} />
+  }
+
   return (
     <Layout location={location} title={siteTitle}>
       <article>
-        <Img 
-            fluid={data.streamJson.image.childImageSharp.fluid}
-            alt="" />
+        {content}
       </article>
 
 
@@ -65,6 +73,8 @@ export const itemQuery = graphql`
     }
     streamJson(id: { eq: $id }) {
       id
+      remote_path
+      type
       image {
         childImageSharp {
           fluid(maxWidth: 800) {...GatsbyImageSharpFluid}

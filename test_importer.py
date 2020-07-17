@@ -37,20 +37,25 @@ def test_store_image(tmp_path):
     assert expected_path.exists()
     assert str(returned_path) == str(returned_path)
 
+def dummy_store(hash_id, file_path):
+    return "https://dummy"
 
 def test_main(tmp_path):
     expected_1 = {"id": "44da489ff3dab4becc5bc467c86d2c93",
                     "image": "44da489ff3dab4becc5bc467c86d2c93.jpg",
                     "date": "2020-07-15",
                     "remote_path": "",
+                    "type": "image",
                     }
     expected_2 = {"id": "f85fe02c1025a903c0307113a6d9253c",
                     "image": "f85fe02c1025a903c0307113a6d9253c.jpg",
                     "date": "2020-07-15",
                     "remote_path": "",
+                    "type": "image",
                     }
 
     import_dir = Path("test-data")
+    importer.store_file = dummy_store
     importer.STORAGE_PATH = tmp_path
     importer.main(import_dir)
 
@@ -66,15 +71,18 @@ def test_dont_add_dupes(tmp_path):
                     "image": "44da489ff3dab4becc5bc467c86d2c93.jpg",
                     "date": "2020-07-15",
                     "remote_path": "",
+                    "type": "image",
                     }
     expected_2 = {"id": "f85fe02c1025a903c0307113a6d9253c",
                     "image": "f85fe02c1025a903c0307113a6d9253c.jpg",
                     "date": "2020-07-15",
                     "remote_path": "",
+                    "type": "image",
                     }
 
     import_dir = Path("test-data")
     importer.STORAGE_PATH = tmp_path
+    importer.store_file = dummy_store
     importer.main(import_dir)
     importer.main(import_dir)
 

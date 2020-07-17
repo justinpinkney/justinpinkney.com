@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 image_types = (".jpg", ".png", ".jpeg", ".tiff", ".tif")
-video_types = (".mp4", ".gif")
+video_types = (".mp4",) # todo gifs
 
 MAX_RESOLUTION = 1024
 STORAGE_PATH = Path("content/data/stream")
@@ -34,7 +34,7 @@ def store_file(hash_id, file_path):
     return "https://" + remote_path
 
 def load_db():    
-    json_path = STORAGE_PATH/"db.json"
+    json_path = STORAGE_PATH/"db.tinydb"
     return TinyDB(json_path)
 
 def get_hash(file_path):
@@ -98,9 +98,11 @@ def main(import_dir):
 
         if file_path.suffix in image_types:
             hash_id, im = parse_image(file_path)
+            file_type = "image"
         elif file_path.suffix in video_types:
             hash_id, im = parse_video(file_path)
             remote_storage = True
+            file_type = "video"
         else:
             print(f"Not importing {file_path}")
             continue
@@ -117,13 +119,14 @@ def main(import_dir):
                  "image": str(stored_file_path), 
                 "date": str(t),
                 "remote_path": "",
+                "type": file_type,
                 }
 
         if remote_storage:
-            print("todo storage")
-            #entry["remote_path"] = store_file(hash_id, file_path)
+            print(f"Uploading file {file_path}")
+            entry["remote_path"] = store_file(hash_id, file_path)
             
-
+        print(entry)
         db.insert(entry)
 
 def export():
