@@ -2,6 +2,8 @@
 import React, { Component } from 'react'
 import { Map, TileLayer } from 'react-leaflet'
 import { CRS } from 'leaflet'
+import FullscreenControl from 'react-leaflet-fullscreen';
+import 'react-leaflet-fullscreen/dist/styles.css'
 
 export default class BigImage extends Component {
   render() {
@@ -16,6 +18,7 @@ export default class BigImage extends Component {
             <TileLayer
               url={this.props.tile_url}
             />
+            <FullscreenControl position="topleft" />
           </Map>
         </div>
     )
