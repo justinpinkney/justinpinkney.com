@@ -60,22 +60,33 @@ Overall I trained for around 5 million images (which works out around 6 days of 
 
 ![](scores.png)
 
-You'll know when your CakeGAN is fully baked when the FID no longer improves, or a skewer inserted comes out clean or it springs back lightly when poked.
-    
-The recent paper by Karras et al. also suggests another possible metric that indicates when the discriminator is starting to overfit. 
+You'll know when your CakeGAN is fully baked when the FID no longer improves, or a skewer inserted comes out clean or it springs back lightly when poked. Here's a small selection of generated cakes.
 
 ![](fakesgrid.jpg)
+
+And below is a zoomable grid arranged using feature extracted using an imagenet pretrained CNN projected into 2D using UMAP.
+
+import BigImage from "../../../src/components/BigImage"
+
+<BigImage 
+    options={ {center:[-0.25, 0.35], zoom:12, minZoom:9, maxZoom:15 } } 
+    tile_url="https://assets.justinpinkney.com/blog/cakegan/cakes-generated_files//{z}/{x}_{y}.jpg" />
+
+You can download the final trained model from my [Awesome Pretrained StyleGAN 2 repo](https://github.com/justinpinkney/awesome-pretrained-stylegan2/#cakes).
 
 ### Serving
 
 Once we've the model has cooled it should be serving up some delicious interpolation videos. But the best part of a well baked GAN is the smooth and creamy latent space. For a start StyleGAN is famous (in part) for its style mixing capabilities, so let's mix some cakes.
 
-![](grid.png)
+![](grid-0_4.jpg)
 
-If I want to make a cake editor I need to try and find meaningful directions in the latent space. I've got a dataset with some noisy labels I could try and use, but for a first pass using [GANSpace](https://github.com/harskish/ganspace) is a quick and easy way of trying to automatically find meaningful directions[^ganspace-notebook   ].
+If I want to make a cake editor I need to try and find meaningful directions in the latent space. I've got a dataset with some noisy labels I could try and use, but for a first pass using [GANSpace](https://github.com/harskish/ganspace) is a quick and easy way of trying to automatically find meaningful directions[^ganspace-notebook].
 
-__results to come__
+Some of the directions found by GANSpace seem promising, there are some hints of cake to slice, or more chocolate or fruit topping vectors. But the results below are very cherry picked and these don't seem to generalise terribly well.
 
+![](cake-fruit.jpg)
+![](cake-slice.jpg)
+![](cake-chocolate.jpg)
 
 [^1]: This scraper is based on a Google image scraper which now seems to have been broken by changes in the Google images search page.
 
