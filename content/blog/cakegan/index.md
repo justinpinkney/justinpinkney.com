@@ -72,6 +72,7 @@ import BigImage from "../../../src/components/BigImage"
     options={ {center:[-0.25, 0.35], zoom:12, minZoom:9, maxZoom:15 } } 
     tile_url="https://assets.justinpinkney.com/blog/cakegan/cakes-generated_files//{z}/{x}_{y}.jpg" />
 
+You can download the final trained model from my [Awesome Pretrained StyleGAN 2 repo](https://github.com/justinpinkney/awesome-pretrained-stylegan2/#cakes).
 
 ### Serving
 
