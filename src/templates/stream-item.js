@@ -18,7 +18,7 @@ const StreamItemTemplate = ({ data, pageContext, location }) => {
                 fluid={data.streamJson.image.childImageSharp.fluid}
                 alt="" />
   } else if (data.streamJson.type === "video") {
-    content = <video controls src={data.streamJson.remote_path} />
+    content = <video controls src={data.streamJson.remote_path} poster={data.streamJson.image.childImageSharp.fluid.src}/>
   }
 
   return (
@@ -77,7 +77,9 @@ export const itemQuery = graphql`
       type
       image {
         childImageSharp {
-          fluid(maxWidth: 800) {...GatsbyImageSharpFluid}
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid
+          }
         }
       }
     }
