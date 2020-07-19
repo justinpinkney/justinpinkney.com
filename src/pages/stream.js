@@ -10,7 +10,7 @@ const StreamIndex = ({ data, location }) => {
   const ims = data.allStreamJson.nodes
 
   return (
-    <Layout location={location} title="gd">
+    <Layout location={location} title="The Stream">
       <div class="content" 
         style={{display:"grid", 
                 gridTemplateColumns:"repeat(auto-fit, minmax(150px, 1fr))",

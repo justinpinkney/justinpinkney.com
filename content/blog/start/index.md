@@ -8,7 +8,7 @@ description: " "
 
 I'm __Justin Pinkney__ and [[this site]] is my home on the web.
 
-Most of the things on this website are either about [[Generative Art]] or [[Deep Learning]] or the combination of the two.
+Most of the things on this website are either about [[Generative Art]] or [[Deep Learning]] or the combination of the two. Mostly written up as blog posts but you can also see a [[stream]] of outputs and screengrabs of the things I've been playing with.
 
 My [[day job]] is as a software consultant at MathWorks in the U.K. I spend most of my time writing code, developing algorithms, training models, and encouraging people to embrace good software development practices.
 
