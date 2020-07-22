@@ -24,4 +24,4 @@ Gatsby has impressed me with its ease of use and adaptability, it's made making 
 
 [^littlefoot]: Getting Littlefoot to work correctly on the Gatsby production build actually requires something a little different to that described in the readme, see [this issue](https://github.com/goblindegook/littlefoot/issues/338).
 
-[^recipes]: I still keep some recipes at https://recipes.justinpinkey.com but these are just for me and that food blog is long dead.
+[^recipes]: I still keep some recipes at https://recipes.justinpinkney.com but these are just for me and that food blog is long dead.
