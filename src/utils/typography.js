@@ -1,6 +1,6 @@
 import Typography from "typography"
 import stAnnesTheme from "typography-theme-st-annes"
-stAnnesTheme.baseFontSize = "20px"
+stAnnesTheme.baseFontSize = "18px"
 stAnnesTheme.headerColor = "#444"
 stAnnesTheme.bodyColor = "#222"
 

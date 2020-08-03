@@ -88,6 +88,7 @@ Some of the directions found by GANSpace seem promising, there are some hints of
 ![](cake-slice.jpg)
 ![](cake-chocolate.jpg)
 
+
 [^1]: This scraper is based on a Google image scraper which now seems to have been broken by changes in the Google images search page.
 
 [^2]: This may be due to the fact that StyleGAN uses a learned constant as the input to the convolutions, but I'm not aware of any actual evidence for this, (it's more deep learning hearsay than folklore).
