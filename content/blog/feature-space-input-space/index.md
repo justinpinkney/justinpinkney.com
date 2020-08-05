@@ -1,10 +1,9 @@
 ---
-title: From feature space to input space - Inventing new techniques in deep learning
-date: "2020-07-29"
-description: thing
+title: From feature space to input space
+date: "2020-08-05"
+description: An article looking at the connection between input space and feature space in deep neural networks and how various novel methods have been invented by generalising techniques between the two.
+cover: flowers-cut.jpg
 ---
-
-_This short article looks at the connection between input space and feature space in deep neural networks and how various novel methods have been invented by generalising techniques between the two._
 
 ## Input space and Feature space are different sides of the looking glass
 
@@ -28,13 +27,13 @@ Given that there is such a strong connection between input and feature space, it
 
 It is standard practice to normalise the inputs of a machine learning model, at least ensuring the inputs have mean zero and a standard deviation of 1. The logic which inspired batch normalisation is that if such an operation is beneficial in input space, it is logical to expect it to also be of benefit in feature space.
 
-TODO Mention ICS, also reference to LeCunn with good behaviour of hessian by normalising the input
+> Convergence is usually faster if the average of each input variable over the training set is close to zero. [^lecun-backprop]
 
-The invention of batch normalisation was extremely important important in deep learning. It allowed efficient training of increasingly large networks and has become standard practice in many neural network architectures. 
+The invention of batch normalisation was extremely important important in deep learning, it allowed efficient training of increasingly large networks at higher learn rates and has become standard practice in many neural network architectures. Since the original paper's discussion of how batchnorm helps by reducing "internal covariate shift" there has been some confusion as to how exactly it works, but for the best discussion I've seen, look at this Twitter thread by David Page:
 
-TODO Link to tweet by david page about how it works
+<Tweet tweetLink="dcpage3/status/1171867587417952260" />
 
-Clearly, adapting the concept of input normalisation to feature space is not trivial, and batch normalisation requires various new mechanisms and non-obvious assumptions to work (e.g. that batch statistics are sufficient, learned scale and offset parameters, and changes in behaviour between train and test time). In fact many of these unusual features of mean that [[Zettel/Batch Normalisation is a problematic layer]]
+Clearly, adapting the concept of input normalisation to feature space is not trivial, and batch normalisation requires various new mechanisms and non-obvious assumptions to work (e.g. that batch statistics are sufficient, learned scale and offset parameters, and changes in behaviour between train and test time). In fact many of these unusual features of mean that Batch Normalisation turns out to often be a problematic layer.
 
 ## Dropout works in feature space
 
@@ -70,7 +69,9 @@ One other difference here is the difference in training and test time weight sca
 
 In fact those same modifications to dropout that made it work for input space can be ported back to feature space to solve the problem we pointed out earlier: dropout doesn't work well for convolution layers.
 
-The Dropblock paper shows how the idea of zeroing out a contiguous region allows us to use dropout it feature space effectively.
+The Dropblock paper shows how the idea of zeroing out a contiguous region allows us to use dropout it feature space effectively. As the authors state "DropBlock generalizes Cutout by applying Cutout at every feature map in a convolutional networks."[^dropblock]
+
+Unfortunately getting dropblock to work effectively seems to require hyper-parameter tuning, in terms of block size and where it is applied, as well as tweaking training by gradually increasing the amount of drop. The paper also states that "Although Cutout improves accuracy on the CIFAR-10 dataset ... it does not improve the accuracy on the ImageNet dataset in our experiments".
 
 ## What other innovations can be made by generalising ideas between spaces?
 
@@ -78,9 +79,7 @@ So that's a couple of examples of how generalising ideas which were successful i
 
 What others concepts could be transferred from one space to the other? One possibility is the use of image transforms for data augmentation. Random horizontal flips, or small amount of resizing are commonly applied to input images. Could the same be applied to feature space? One complication, particularly for horizontal reflection, is that pixels in feature space are likely to have some directionality that pixels in image space do not. So maybe random rescaling is a better place to start? But as we've seen above, methods often need some modification to be relevant in the other space.
 
-In fact we can also look for other "spaces" to apply our ideas. For example the parameters of the network itself can be considered to be a high-dimensional **weight space**. And although the properties of this are likely to be somewhat different to feature or input space, perhaps some of the ideas can also transition.
-
-TODO See weight normalisation? "qiao2019weight"
+In fact we can also look for other "spaces" to apply our ideas. For example the parameters of the network itself can be considered to be a high-dimensional **weight space**. And although the properties of this are likely to be somewhat different to feature or input space, perhaps some of the ideas can also transition.[^weight-standardisation]
 
 
 ### Image credits
@@ -95,3 +94,9 @@ TODO See weight normalisation? "qiao2019weight"
 [^cutout]: DeVries, Terrance, and Graham W. Taylor. ‘Improved Regularization of Convolutional Neural Networks with Cutout’. ArXiv:1708.04552 [Cs], 29 November 2017. http://arxiv.org/abs/1708.04552.
 
 [^thinking-about-dropout]: There are various different ways to interpret how dropout is working: simply adding noise, approximating averaging an ensemble, or prevent co-adaptation. The original paper outlines these and it would be interesting to revist what evidence there is for what intuition is correct.
+
+[^lecun-backprop]: LeCun, Yann A., Léon Bottou, Genevieve B. Orr, and Klaus-Robert Müller. ‘Efficient BackProp’. In Neural Networks: Tricks of the Trade: Second Edition, edited by Grégoire Montavon, Geneviève B. Orr, and Klaus-Robert Müller, 9–48. Lecture Notes in Computer Science. Berlin, Heidelberg: Springer, 2012. https://doi.org/10.1007/978-3-642-35289-8_3.
+
+[^dropblock]: Ghiasi, Golnaz, Tsung-Yi Lin, and Quoc V. Le. ‘DropBlock: A Regularization Method for Convolutional Networks’. ArXiv:1810.12890 [Cs], 30 October 2018. http://arxiv.org/abs/1810.12890.
+
+[^weight-standardisation]: Qiao, Siyuan, Huiyu Wang, Chenxi Liu, Wei Shen, and Alan Yuille. ‘Weight Standardization’. ArXiv:1903.10520 [Cs], 25 March 2019. http://arxiv.org/abs/1903.10520.
