@@ -6,6 +6,7 @@ description: " "
 
 I do lots of deep learning both at [[day-job:work]] and home, here are some related posts:
 
+- [[StyleGAN Network Blending]]
 - [[pretrained-stylegan:A collection of awesome pretrained StyleGAN 1 and 2 models]]
 - [[matlab-stylegan:StyleGAN implementation for MATLAB]]
 - [[Ukiyoe yourself]]

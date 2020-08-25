@@ -10,6 +10,7 @@ const StreamItemTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const twitter = data.site.siteMetadata.social.twitter
   const { previous, next } = pageContext
+  const similar = data.streamJson.similar
 
   let content
 
@@ -27,6 +28,17 @@ const StreamItemTemplate = ({ data, pageContext, location }) => {
         {content}
       </article>
 
+      <div id="similar" style={{display:"flex", height: "100px"}} >
+          
+          {similar.map((node) => {
+            return <div style={{ width: "100%" }}>
+              <Link to={"stream/" + node.name}>
+                <Img 
+                fluid={node.childImageSharp.fluid} />
+              </Link>
+        </div>
+          })}
+      </div>
 
       <nav>
         <ul
@@ -78,6 +90,14 @@ export const itemQuery = graphql`
       image {
         childImageSharp {
           fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      similar {
+        name
+        childImageSharp {
+          fluid(maxWidth: 100, maxHeight: 100) {
             ...GatsbyImageSharpFluid
           }
         }

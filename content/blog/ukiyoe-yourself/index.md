@@ -72,6 +72,8 @@ There are still some artifacts but I think it's a fun technique and sometimes gi
 ![](./examples/seed0092.png.jpg)
 ![](./examples/seed0094.png.jpg)
 
+Since this original example I have put a bit more work into testing out these layer swapping ideas. You can get code to do it yourself, and see what other weird and wonderful things myself and others have come up with [[stylegan-network-blending:in this post]].
+
 ## Other thoughts
 
 I tried using CycleGAN to iron out the defects in the outputs of the combined model. Training it to convert from the modified model to the original ukiyo-e faces, but the brief attempts I've given haven't got any good results:
@@ -85,7 +87,7 @@ While I'm at it, a CycleGAN trained to turn Ukiyo-e faces into real ones does gi
 <video controls src="ukiyoe_face.mp4"></video>
 </p>
 
-Currently my "layer swapping" is just a straight copy of the weights of certain layers of one model to the other. But this leads to a harsh transition in the model. Maybe a smoother transition would give nicer results, for example gradual interpolating from one model to the other as you move through the layers
+Currently my "layer swapping" is just a straight copy of the weights of certain layers of one model to the other. But this leads to a harsh transition in the model. Maybe a smoother transition would give nicer results, for example gradual interpolating from one model to the other as you move through the layers.
 
 Another completely different idea would be to simply not train the lower resolution layers to begin. This might prevent the model changing the low resolution appearance (like pose) while getting the appearance of ukiyo-e right
 

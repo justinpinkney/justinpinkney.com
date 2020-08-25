@@ -16,4 +16,9 @@ description: A list of ideas I probably wont every have time to try out.
 - CycleGAN Kiki's Delivery Service city to real version translator
 - CycleGAN Lego buildings to real buildings
 - Train StyleGAN on a very visually consistant image, e.g. time lapse from Shibuya crossing
-- Interpolate/swap between layers in fine-tuned StyleGAN pair, extension of layer swapping in [[ukiyoe yourself]]
+
+## Done
+
+Ideas that I actually tried out!
+
+- Interpolate/swap between layers in fine-tuned StyleGAN pair, extension of layer swapping in [[ukiyoe yourself]] - __See [[StyleGAN Network Blending]]__
