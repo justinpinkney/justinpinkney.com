@@ -20,9 +20,7 @@ title="See Footnote <% number %>"
 
 export function onRouteUpdate() {
   littlefoot({'buttonTemplate': template,
-              'allowDuplicates': true,
-              'activateOnHover': true,
-              'dismissOnUnhover': true})
+              'allowDuplicates': true,})
   // Leave footnotes at end, see https://github.com/goblindegook/littlefoot/issues/380
   Array.prototype.forEach.call(document.querySelectorAll('.footnotes.footnote-print-only, .footnotes .footnote-print-only'), e => e.classList.remove('footnote-print-only'))
   Array.prototype.forEach.call(document.querySelectorAll('.footnote-backref'), (el) => { el.href = el.href.replace('#', '#lf-') })

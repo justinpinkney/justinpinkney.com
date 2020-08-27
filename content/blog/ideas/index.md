@@ -1,7 +1,7 @@
 ---
 title: Ideas 💡
 date: "2020-08-19"
-description: A list of ideas I probably wont every have time to try out.
+description: A list of ideas I probably wont ever have time to try out.
 ---
 
 - Use person detection and inpainting to remove all the people from FFHQ. The faces are the most problematic bit of the dataset and the backgrounds are more interesting anyway
