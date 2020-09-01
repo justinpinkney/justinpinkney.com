@@ -2,6 +2,7 @@
 title: Toonify yourself
 date: "2020-09-01"
 description: Use StyleGAN model blending to find your Pixar self
+cover: m2.jpg
 ---
 
 __TLDR: If you want a Colab Notebook to toonify yourself click here:__
