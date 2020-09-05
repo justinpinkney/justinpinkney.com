@@ -152,7 +152,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Justin Pinkney's RSS Feed",
+            title: "Justin Pinkney's blog",
           },
         ],
       },
