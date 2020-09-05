@@ -14,4 +14,4 @@ My [[day job]] is as a software consultant at MathWorks in the U.K. I spend most
 
 I spend a lot of my free time messing around with code and here I'll write about some of it. Some things might even be called [[projects]] and hopefully [[all:the rest]] might still be of interest.
 
-You can also [[find me]] on other places around the web.
+You can also [[find me]] on other places around the web. Or keep up to date with this site via [RSS](rss.xml).
