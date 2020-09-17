@@ -10,7 +10,7 @@ Of all the GAN architectures pix2pix is a personal favourite. It popularised the
 
 ![Input to the model on the left and output on the right](result.jpg)
 
-Since R2019b MATLAB has had support for automatic differentiation and it's been possible to train GANs. So one of the first things I tried out was writing a MATLAB version of pix2pix (unlike Python it's easy to be the first to write and implementation of a deep learning paper in MATLAB).
+Since R2019b MATLAB has had support for automatic differentiation and it's been possible to train GANs. So one of the first things I tried out was writing a MATLAB version of pix2pix (unlike Python it's easy to be the first to write an implementation of a deep learning paper in MATLAB).
 
 ![](https://raw.githubusercontent.com/matlab-deep-learning/pix2pix/master/docs/training.gif)
 
