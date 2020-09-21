@@ -37,7 +37,7 @@ So after a few evenings of putting together a small app using Flask and Bootstra
 
 ## Toonification in the Wild
 
-So after some beta testing with friends I announced the release of the [Toonify Yourself](toonify.justinpinkney.com) website on Twitter. It quickly got some reasonable traffic and people seemed to be enjoying trying the model out on themselves.
+So after some beta testing with friends I announced the release of the [Toonify Yourself](https://toonify.justinpinkney.com) website on Twitter. It quickly got some reasonable traffic and people seemed to be enjoying trying the model out on themselves.
 
 ![](toonify.jpg)
 
