@@ -73,9 +73,21 @@ We're currently working on getting the website back up and running again. I'm no
 
 __So watch this space (or my Twitter feed) Toonify Yourself will be back!__
 
-## Media coverage
+## Twitter
+
+Lots of people shared fun examples on Twitter, here are a few:
+
+<TwitterTimeline username="Buntworthy/timelines/1308129916114939904" height="650px" />
+
+## Coverage
 
 Here are some links to the coverage this got.
+
+- [Pocket lint - How to Toonify yourself: See what you'd look like in a cartoon movie](https://www.pocket-lint.com/apps/news/153848-how-to-toonify-yourself-see-what-you-d-look-like-in-a-cartoon-movie)
+- [Gigazine - I tried using 'Toonify Yourself!' Which can convert your face into Disney animation style](https://gigazine.net/gsc_news/en/20200917-toonify-yourself/)
+- [Meduza - Medusa tried Toonify, a service that turns you into cartoon characters. Well, or in a man of the Neolithic era](https://meduza.io/shapito/2020/09/17/meduza-ispytala-toonify-servis-kotoryy-prevraschaet-vas-v-personazhey-multfilmov-nu-ili-v-cheloveka-epohi-neolita)
+- [This AI Transform Faces into Hyper-Realistic Cartoon Characters](https://youtu.be/7Oqpiaj0IUM)
+- [The three giants of deep learning have also become cute, this one-click conversion of animated movie images is actually offline due to "too hot"](https://tech.sina.com.cn/roll/2020-09-20/doc-iivhuipp5388256.shtml)
 
 __TODO__
 
