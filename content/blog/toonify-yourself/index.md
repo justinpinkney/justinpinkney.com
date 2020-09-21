@@ -9,6 +9,8 @@ __TLDR: If you want a Colab Notebook to toonify yourself click here:__
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1s2XPNMwf6HDhrJ1FMwlW1jl-eQ2-_tlk?usp=sharing)
 
+__If you're interested in how the website [Toonify Yourself](toonify.justinpinkney.com) works, see this [[making-toonify:followup post]]__
+
 In a [[stylegan-network-blending:previous post]] I introduced the idea of __Layer Swapping__ (or more generally network blending) for StyleGAN models. I briefly pointed to a fantastic model created by [Doron Adler](https://linktr.ee/Norod78) that generates almost photo-realistc people who seem to have come straight out of your favourite Disney/Pixar/Dreamworks animated movie.
 
 <Tweet tweetLink="Norod78/status/1297513475258953728" />
@@ -70,3 +72,7 @@ BTW all credit to [Doron](https://twitter.com/Norod78) for making the model and 
 ![](examples/toon7.jpg)
 ![](examples/toon8.jpg)
 ![](examples/toon9.jpg)
+
+## Next steps
+
+I followed up this stuff by making a website where anyone could Toonify themselves in a few seconds, it got pretty popular (too popular!). See the details of how it was made [[making-toonify:here]].
