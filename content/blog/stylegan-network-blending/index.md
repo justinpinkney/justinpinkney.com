@@ -71,8 +71,24 @@ The results are pretty amazing, this sort of __"resolution dependent model inter
 
 On the left is the output of the __anime model__, on the right the __my little pony model__, and in the middle the mid-resolution layers have been transplanted from __my little pony__ into __anime__. This essentially introduces middle resolution features such as the eyes and nose from __my little pony__ into __anime__ characters!
 
+### Parameter tuning
 
-### Going further
+[Nathan Shipley](https://twitter.com/CitizenPlain) made some beautiful experiments trying to get the [[toonify-yourself:Toonification effect]] just right by adjusting two of the key parameters: the amount of transfer learning to apply (measured in thousands of iterations) and the resolution layer from which to swap. By tuning these two you can pick out just the degree of Toonificaiton to apply:
+
+
+import BigImage from "../../../src/components/BigImage"
+
+<BigImage 
+    options={ {center:[-0.25, 0.35], zoom:10, minZoom:9, maxZoom:14 } } 
+    tile_url="https://assets.justinpinkney.com/blog/toonification/toonify-obama_files/{z}/{x}_{y}.jpg" />
+
+<br />
+
+Then he applied First Order Motion model and you get some pretty amazing results:
+
+<Tweet tweetLink="CitizenPlain/status/1308824021803372549" />
+
+## Going further
 
 I think there's lots of potential to look at these blending strategies further, in particular not only interpolating between models dependent on the resolution, but also differently for different channels. If you can identify the subset of neurons which correspond (for example) to the my little pony eyes you could swap those specifically into the anime model, and be able to modify the eyes without affecting other features, such as the nose. Simple clustering of the internal activations has already been shown to be an effective way of identifying neurons which correspond to attributes in the image in the [Editing in Style paper](https://arxiv.org/abs/2004.14367) so this seems pretty straightforward to try!
 
