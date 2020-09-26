@@ -73,7 +73,7 @@ On the left is the output of the __anime model__, on the right the __my little p
 
 ### Parameter tuning
 
-[Nathan Shipley](https://twitter.com/CitizenPlain) made some beautiful experiments trying to get the [[toonify-yourself:Toonification effect]] just right by adjusting two of the key parameters: the amount of transfer learning to apply (measured in thousands of iterations) and the resolution layer from which to swap. By tuning these two you can pick out just the degree of Toonificaiton to apply:
+[Nathan Shipley](https://twitter.com/CitizenPlain) made some beautiful experiments trying to get the [[toonify-yourself:Toonification effect]] just right by adjusting two of the key parameters: the amount of transfer learning to apply (measured in thousands of iterations) and the resolution layer from which to swap. By tuning these two you can pick out just the degree of Toonificaiton to apply, see this lovely figure made by Nathan:
 
 
 import BigImage from "../../../src/components/BigImage"
