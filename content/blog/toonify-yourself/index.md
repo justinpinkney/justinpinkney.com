@@ -61,6 +61,10 @@ If you want to try this process yourself you can use [this colab notebook](https
 
 BTW all credit to [Doron](https://twitter.com/Norod78) for making the model and showing this self toonification works wonderfully!
 
+## Next steps
+
+I followed up this stuff by making a website where anyone could Toonify themselves in a few seconds, it got pretty popular (too popular!). See the details of how it was made [[making-toonify:here]].
+
 ## More examples
 
 ![](examples/toon1.jpg)
@@ -73,6 +77,3 @@ BTW all credit to [Doron](https://twitter.com/Norod78) for making the model and 
 ![](examples/toon8.jpg)
 ![](examples/toon9.jpg)
 
-## Next steps
-
-I followed up this stuff by making a website where anyone could Toonify themselves in a few seconds, it got pretty popular (too popular!). See the details of how it was made [[making-toonify:here]].

@@ -5,7 +5,11 @@ description: The story of deploying a deep neural network to the cloud and Tooni
 cover: toonify.jpg
 --- 
 
-So [Doron Adler](https://linktr.ee/Norod78) and I recently released our toonification translation model at our Toonify Yourself website. It turned out to be pretty popular with tens of thousands people visiting in the 22 hours it was running for, submitting almost a quarter of a million images for toonification.
+_If you'd like to keep Toonify Yourself free for everyone to play with, please consider donating to cover running costs at Ko-fi:_
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W228W2S)
+
+So [Doron Adler](https://linktr.ee/Norod78) and I recently released our toonification translation model at our [Toonify Yourself](https://toonify.justinpinkney.com) website. It turned out to be pretty popular with tens of thousands people visiting in the 22 hours it was running for, submitting almost a quarter of a million images for toonification.
 
 <Tweet tweetLink="Buntworthy/status/1306236896125870080" />
 
@@ -69,9 +73,9 @@ Despite me putting a line in the FAQ assuring people I was not storing or collec
 
 ## The future
 
-We're currently working on getting the website back up and running again. I'm not keen on the obvious (and suggested by many) strategy of just plastering ads everywhere. But the success of the website has sparked many interesting conversations for me, and I think one of them will lead to a solution pretty soon.
+__UPDATE: Toonify Yourself is back__ thanks to the fantastic support of generous supporters on Ko-fi, as well as model hosting thanks to [DeepAI](https://deepai.org). There's still costs involved in running the site, so if you'd like to help keep things free for everyone to play with please think about [supporting me on Ko-fi](https://ko-fi.com/justinpinkney).
 
-__So watch this space (or my Twitter feed) Toonify Yourself will be back!__
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W228W2S)
 
 ## Twitter
 
@@ -88,8 +92,19 @@ Here are some links to the coverage this got.
 - [Meduza - Medusa tried Toonify, a service that turns you into cartoon characters. Well, or in a man of the Neolithic era](https://meduza.io/shapito/2020/09/17/meduza-ispytala-toonify-servis-kotoryy-prevraschaet-vas-v-personazhey-multfilmov-nu-ili-v-cheloveka-epohi-neolita)
 - [This AI Transform Faces into Hyper-Realistic Cartoon Characters](https://youtu.be/7Oqpiaj0IUM)
 - [The three giants of deep learning have also become cute, this one-click conversion of animated movie images is actually offline due to "too hot"](https://tech.sina.com.cn/roll/2020-09-20/doc-iivhuipp5388256.shtml)
+- [This App That Turns People Into Pixar-Like Cartoon Characters Gets The Internet Buzzing](https://www.boredpanda.com/turning-people-into-characters-toonify-justin-pinkney/)
+- [You can now know what you would look like as a character in an animated film thanks to Toonify and artificial intelligence](https://www.genbeta.com/web/puedes-saber-que-aspecto-tendrias-como-personaje-pelicula-animacion-gracias-a-toonify-inteligencia-artificial)
+- [This artificial intelligence turns your face into a cartoon character](https://hitek.fr/42/intelligence-artificielle-toonify-transforme-portrat-personnage-cartoon_8228)
+- [The latest viral fashion: this website transforms you into a Pixar character](https://www.20minutos.es/noticia/4397744/0/la-ultima-moda-viral-en-transformacion-del-rostro-esta-web-te-muestra-como-serias-si-fueras-un-personaje-de-pixar/)
+- [What would you look like as a fairy tale figure? You can also try out the new favorite craze of the stars](https://femina.hu/terasz/mesefigura-atalakito/)
+- [Toonify can turn a human face into the face of a cartoon character](https://otechnice.cz/toonify-dokaze-promenit-lidskou-tvar-v-oblicej-kreslene-postavicky/)
 
-__TODO__
+and many many more...
+
+I was even interviewed on the excellent Cold Fusion YouTube channel:
+
+<YouTube youTubeId="KZ7BnJb30Cc" />
+
 
 [^style-transfer]: For a classic example see the work on neural Style Transfer.
 
