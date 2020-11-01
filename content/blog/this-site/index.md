@@ -21,6 +21,7 @@ Gatsby has impressed me with its ease of use and adaptability, it's made making 
 - [gatsby-plugin-react-leaflet](https://github.com/dweirich/gatsby-plugin-react-leaflet) - for working with leaflet
 - [Littlefoot](https://github.com/goblindegook/littlefoot) - for foot note pop overs[^littlefoot]
 - [TinyDB](https://tinydb.readthedocs.io/en/stable/), [pysftp](https://pysftp.readthedocs.io/en/release_0.2.9/), [imageio](https://imageio.github.io/), and [Pillow](https://pillow.readthedocs.io/en/stable/) for managing my [[stream]]
+- [Leaflet EdgeBuffer](https://github.com/TolonUK/Leaflet.EdgeBuffer)
 
 [^littlefoot]: Getting Littlefoot to work correctly on the Gatsby production build actually requires something a little different to that described in the readme, see [this issue](https://github.com/goblindegook/littlefoot/issues/338).
 

@@ -4,6 +4,7 @@ import { Map, TileLayer } from 'react-leaflet'
 import { CRS } from 'leaflet'
 import FullscreenControl from 'react-leaflet-fullscreen';
 import 'react-leaflet-fullscreen/dist/styles.css'
+import 'leaflet-edgebuffer'
 
 export default class BigImage extends Component {
   render() {
@@ -17,6 +18,7 @@ export default class BigImage extends Component {
           <Map {...options}>
             <TileLayer
               url={this.props.tile_url}
+              edgeBufferTiles={1}
             />
             <FullscreenControl position="topleft" />
           </Map>
