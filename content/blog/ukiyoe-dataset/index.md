@@ -5,7 +5,7 @@ description: A dataset of thousands of high resolution aligned faces from uikyo-
 cover: ukiyoe-dataset.jpg
 ---
 
-__[Download the dataset: V2](https://drive.google.com/file/d/1zEgVLrKVp8oCZuX0NENcAeh-kdaKJzNG/view?usp=sharing)__
+__[Download the dataset: V2](https://drive.google.com/file/d/1zEgVLrKVp8oCZuX0NENcAeh-kdaKJzNG/view?usp=sharing)__ ![](https://i.creativecommons.org/l/by-sa/4.0/80x15.png)
 
 ![](ukiyoe-dataset.jpg)
 
@@ -38,9 +38,11 @@ Images are scraped from several museum websites, I then used Amazon Rekognition 
 
 ## License and usage
 
-This dataset is provided under a [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
+![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
-If using the dataset please cite as:
+This dataset is provided under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+
+If using the dataset please cite as "Aligned ukiyo-e faces dataset, Justin Pinkney 2020" or for a bibtex entry:
 
 ```
 @misc{pinkney2020ukiyoe,
