@@ -5,6 +5,10 @@ description: A dataset of thousands of high resolution aligned faces from uikyo-
 cover: ukiyoe-dataset.jpg
 ---
 
+import StructuredData from "../../../src/components/StructuredData"
+
+<StructuredData />
+
 __[Download the dataset: V2](https://drive.google.com/file/d/1zEgVLrKVp8oCZuX0NENcAeh-kdaKJzNG/view?usp=sharing)__ ![](https://i.creativecommons.org/l/by-sa/4.0/80x15.png)
 
 ![](ukiyoe-dataset.jpg)
