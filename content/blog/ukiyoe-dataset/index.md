@@ -50,10 +50,10 @@ If using the dataset please cite as "Aligned ukiyo-e faces dataset, Justin Pinkn
 
 ```
 @misc{pinkney2020ukiyoe,
-      author = {Justin N. M. Pinkney},
+      author = {Pinkney, Justin N. M.},
       title = {Aligned Ukiyo-e faces dataset},
       year={2020},
-      howpublished= {\url{https://www.justinpinkney.com/ukiyoe-dataset}
+      howpublished= {\url{https://www.justinpinkney.com/ukiyoe-dataset}}
 } 
 ```
 
