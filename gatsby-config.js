@@ -136,6 +136,7 @@ module.exports = {
               {
                 allMdx(
                   sort: { order: DESC, fields: [frontmatter___date] },
+                  filter: {frontmatter: {draft: {ne: true}}}
                 ) {
                   edges {
                     node {

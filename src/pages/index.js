@@ -20,7 +20,11 @@ const BlogIndex = ({ data, location }) => {
       <Start />
       <h3>Most recently updated pages:</h3>
       {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
+        let title = node.frontmatter.title || node.fields.slug
+        let draft = ""
+        if (node.frontmatter.draft) {
+          draft = "(draft) -- "
+        }
         let cover =  node.frontmatter.cover
         let coverBit 
         if (cover) {
@@ -37,7 +41,7 @@ const BlogIndex = ({ data, location }) => {
                   marginBottom: rhythm(1/8),
                 }}
               >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <i>{draft}</i><Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
@@ -82,6 +86,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            draft
             cover {
               childImageSharp {
                 fluid(maxWidth: 800) {
