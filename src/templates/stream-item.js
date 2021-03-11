@@ -7,28 +7,26 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
 const StreamItemTemplate = ({ data, pageContext, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const twitter = data.site.siteMetadata.social.twitter
+  // const siteTitle = data.site.siteMetadata.title
+  // const twitter = data.site.siteMetadata.social.twitter
   const { previous, next } = pageContext
-  const similar = data.streamJson.similar
+  // const similar = data.flickrPhoto.similar
 
   let content
 
-  if (data.streamJson.type === "image") {
-    content = <Img 
-                fluid={data.streamJson.image.childImageSharp.fluid}
+  // if (data.flickrPhoto.media === "photo") {
+    content = <img 
+                src={data.flickrPhoto.url_m}
                 alt="" />
-  } else if (data.streamJson.type === "video") {
-    content = <video controls src={data.streamJson.remote_path} poster={data.streamJson.image.childImageSharp.fluid.src}/>
-  }
+  // }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title="test">
       <article>
         {content}
       </article>
 
-      <div id="similar" style={{display:"flex", height: "100px"}} >
+      {/* <div id="similar" style={{display:"flex", height: "100px"}} >
           
           {similar.map((node) => {
             return <div style={{ width: "100%" }}>
@@ -38,7 +36,7 @@ const StreamItemTemplate = ({ data, pageContext, location }) => {
               </Link>
         </div>
           })}
-      </div>
+      </div> */}
 
       <nav>
         <ul
@@ -75,33 +73,14 @@ export default StreamItemTemplate
 
 export const itemQuery = graphql`
   query StreamItemById($id: String!) {
-    site {
-      siteMetadata {
-        title
-        social {
-          twitter
-        }
-      }
-    }
-    streamJson(id: { eq: $id }) {
+    flickrPhoto(id: {eq: $id}) {
       id
-      remote_path
-      type
-      image {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      similar {
-        name
-        childImageSharp {
-          fluid(maxWidth: 100, maxHeight: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
+      dateupload_date
+      description
+      url_m
+      title
+      tags
+      media
     }
   }
 `
