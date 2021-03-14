@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Justin Pinkney`,
@@ -154,10 +158,17 @@ module.exports = {
             `,
             output: "/rss.xml",
             title: "Justin Pinkney's blog",
-          },
+          }
         ],
       },
     },
+    {
+      resolve: "gatsby-source-flickr",
+      options: {
+        api_key: `${process.env.FLICKR_API_KEY}`,
+        user_id: `${process.env.FLICKR_USER_ID}`
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -8,6 +8,14 @@ const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
+  let nav = (
+    <nav>
+      <Link to="stream">
+        Stream
+      </Link>
+    </nav>
+  )
+
   if (location.pathname === rootPath) {
     header = (
       <h1
@@ -56,7 +64,18 @@ const Layout = ({ location, title, children }) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <header>{header}</header>
+      <header>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "stretch",
+        }}
+      >
+        {header}
+        {nav}
+        </div>
+      </header>
       <main
         style={{
           marginBottom: rhythm(1),

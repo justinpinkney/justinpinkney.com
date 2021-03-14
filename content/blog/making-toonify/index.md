@@ -1,7 +1,7 @@
 ---
 title: Making Toonify Yourself
 date: "2020-09-20"
-description: The story of deploying a deep neural network to the cloud and Toonifying tens of thousands and images an hour.
+description: The story of deploying a deep neural network to the cloud and Toonifying tens of thousands of images an hour.
 cover: toonify.jpg
 --- 
 

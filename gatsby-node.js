@@ -22,7 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         },
       
-        stream: allStreamJson(sort: {fields: [date], order: DESC}, limit: 1000) {
+        stream: allFlickrPhoto(sort: {fields: dateupload, order: DESC}) {
           edges {
             node {
               id
