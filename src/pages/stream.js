@@ -39,11 +39,11 @@ export const pageQuery = graphql`
           }
         }
       }
-      allFlickrPhoto(sort: {fields: dateupload, order: DESC}) {
+      allFlickrPhoto(sort: {fields: datetaken, order: DESC}) {
         nodes {
           id
           url_q
-          dateupload_date
+          datetaken
           title
           tags
         }

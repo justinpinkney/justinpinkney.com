@@ -13,27 +13,31 @@ const StreamItemTemplate = ({ data, pageContext, location }) => {
   // const similar = data.flickrPhoto.similar
 
   let content
+  let media_content
 
-  // if (data.flickrPhoto.media === "photo") {
+  if (data.flickrPhoto.originalformat === "gif") {
+    media_content = <img src={data.flickrPhoto.url_o} alt="" />
+  } else {
+    const size_data = [
+      [data.flickrPhoto.width_n, data.flickrPhoto.url_n],
+      [data.flickrPhoto.width_m, data.flickrPhoto.url_m],
+      [data.flickrPhoto.width_z, data.flickrPhoto.url_z],
+      [data.flickrPhoto.width_c, data.flickrPhoto.url_c],
+      [data.flickrPhoto.width_l, data.flickrPhoto.url_l],
+    ]
     
-  const size_data = [
-    [data.flickrPhoto.width_n, data.flickrPhoto.url_n],
-    [data.flickrPhoto.width_m, data.flickrPhoto.url_m],
-    [data.flickrPhoto.width_z, data.flickrPhoto.url_z],
-    [data.flickrPhoto.width_c, data.flickrPhoto.url_c],
-    [data.flickrPhoto.width_l, data.flickrPhoto.url_l],
-  ]
+    let srcset = size_data.map(x => `${x[1]} ${x[0]}w`).join(', ')
+    let sizes = size_data.map(x => `(max-width: ${x[0]}px) ${x[0]}px`).join(', ')
 
-  let srcset = size_data.map(x => `${x[1]} ${x[0]}w`).join(', ')
-  let sizes = size_data.map(x => `(max-width: ${x[0]}px) ${x[0]}px`).join(', ')
+    media_content = <img srcSet={srcset} sizes={sizes} alt="" />
 
+  }
+
+  
 
   content = <> 
               <h1>{data.flickrPhoto.title}</h1>
-              <img 
-                srcSet={srcset}
-                sizes={sizes}
-                alt="" />
+                {media_content}
               <p
                 dangerouslySetInnerHTML={{
                   __html: data.flickrPhoto.description,
@@ -116,6 +120,7 @@ export const itemQuery = graphql`
       title
       tags
       media
+      originalformat
       width_n
       width_m
       width_z
@@ -126,6 +131,7 @@ export const itemQuery = graphql`
       url_z
       url_c
       url_l
+      url_o
     }
   }
 `
