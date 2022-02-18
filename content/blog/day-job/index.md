@@ -6,7 +6,7 @@ description: " "
 
 ## Lambda Labs
 
-I currently work as a Senior Machine Learning Researcher at Lambda Labs. TODO
+I currently work as a Senior Machine Learning Researcher at Lambda Labs mostly with a focus on computer vision and generative models.
 
 
 <hr />
