@@ -8,14 +8,6 @@ const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
-  let nav = (
-    <nav>
-      <Link to="stream">
-        Stream
-      </Link>
-    </nav>
-  )
-
   if (location.pathname === rootPath) {
     header = (
       <h1
@@ -73,7 +65,6 @@ const Layout = ({ location, title, children }) => {
         }}
       >
         {header}
-        {nav}
         </div>
       </header>
       <main
