@@ -30,7 +30,7 @@ module.exports = {
         name: `assets`
       }
     },
-    `gatsby-remark-images`, 
+    `gatsby-remark-images`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -99,12 +99,6 @@ module.exports = {
     },
     `gatsby-plugin-catch-links`,
     `gatsby-transformer-json`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/data/stream`,
-      },
-    },
     `@pauliescanlon/gatsby-mdx-embed`,
     `gatsby-plugin-react-leaflet`,
     `gatsby-plugin-sitemap`,
@@ -162,13 +156,6 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: "gatsby-source-flickr",
-      options: {
-        api_key: `${process.env.FLICKR_API_KEY}`,
-        user_id: `${process.env.FLICKR_USER_ID}`
-      }
-    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

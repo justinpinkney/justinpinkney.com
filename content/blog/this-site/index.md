@@ -10,7 +10,7 @@ This is my latest attempt (and I'm sure it'll stick this time, honest...). Hopef
 
 The site is built with [Gatsby](https://www.gatsbyjs.org/) and will give me somewhere to play with web technologies and learn a little more JavaScript and React. Under the hood I'm writing posts in MDX so I can include slightly [[trying-leaflet:more interactive content]] that in plain old markdown blogs. I've enjoyed seeing some of the recent activity around digital gardens and the indie web and hope to incorporate some of those ideas here too.
 
-Gatsby has impressed me with its ease of use and adaptability, it's made making websites fun again. Spurred on with enthusiasm I've also added section of the site for me to dump a [[stream:stream of the outputs and screen grabs as I make]].
+Gatsby has impressed me with its ease of use and adaptability, it's made making websites fun again.
 
 ## Making use of these great things
 
@@ -22,8 +22,7 @@ Gatsby has impressed me with its ease of use and adaptability, it's made making 
 - [Littlefoot](https://github.com/goblindegook/littlefoot) - for foot note pop overs[^littlefoot]
 - [TinyDB](https://tinydb.readthedocs.io/en/stable/), [pysftp](https://pysftp.readthedocs.io/en/release_0.2.9/), [imageio](https://imageio.github.io/), and [Pillow](https://pillow.readthedocs.io/en/stable/) for managing my [[stream]]
 - [Leaflet EdgeBuffer](https://github.com/TolonUK/Leaflet.EdgeBuffer)
-- [gatsby-source-flickr](https://github.com/chrissearle/gatsby-source-flickr) for filling images in the [[stream]] from flickr
-- Flickr - yes it's "old" but for actually hosting photos and providing an API it's a great option
+
 
 [^littlefoot]: Getting Littlefoot to work correctly on the Gatsby production build actually requires something a little different to that described in the readme, see [this issue](https://github.com/goblindegook/littlefoot/issues/338).
 

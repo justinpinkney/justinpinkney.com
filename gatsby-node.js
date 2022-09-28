@@ -5,7 +5,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const streamItem = path.resolve(`./src/templates/stream-item.js`)
   const result = await graphql(
     `
       {
@@ -20,14 +19,6 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
           }
-        },
-      
-        stream: allFlickrPhoto(sort: {fields: dateupload, order: DESC}) {
-          edges {
-            node {
-              id
-            }
-          }
         }
       }
     `
@@ -36,7 +27,7 @@ exports.createPages = async ({ graphql, actions }) => {
     if (result.errors) {
       throw result.errors
     }
-  
+
       // Create blog posts pages.
     const posts = result.data.blog.edges
 
@@ -55,40 +46,12 @@ exports.createPages = async ({ graphql, actions }) => {
         })
       })
 
-      // Create stream items
-      // Create blog posts pages.
-      const streamPosts = result.data.stream.edges
-
-      streamPosts.forEach((post, index) => {
-        const previous = index === streamPosts.length - 1 ? null : streamPosts[index + 1].node
-        const next = index === 0 ? null : streamPosts[index - 1].node
-
-        createPage({
-          path: "stream/" + post.node.id,
-          component: streamItem,
-          context: {
-            id: post.node.id,
-            previous,
-            next,
-          },
-        })
-      })
-
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `Mdx`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
-
-  if (node.internal.type === `StreamJson`) {
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,
