@@ -9,7 +9,7 @@ If you want to just try out the model look here:
 [![Open in Replicate](https://img.shields.io/badge/%F0%9F%9A%80-Open%20in%20Replicate-%23fff891)](https://replicate.com/lambdal/text-to-pokemon)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LambdaLabsML/lambda-diffusers/blob/main/notebooks/pokemon_demo.ipynb)
 
-__All of this work was done as part of my [[day job]] at Lambda Labs and all the real details of how the model was made, and how you can make one yourself are in this post on the [Lambda Examples repo](https://github.com/LambdaLabsML/examples/tree/main/stable-diffusion-finetuning). This blog post just has a few extra details and notes on my experience__
+__All of this work was done as part of my [[day job]] at [Lambda Labs](https://lambdalabs.com/) and all the real details of how the model was made, and how you can make one yourself are in this post on the [Lambda Examples repo](https://github.com/LambdaLabsML/examples/tree/main/stable-diffusion-finetuning). This blog post just has a few extra details and notes on my experience__
 
 ![](pokemontage.jpg)
 
