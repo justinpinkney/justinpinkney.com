@@ -48,6 +48,7 @@ Since then it's been featured here:
 
 - [The Verge - Turn anyone into a pokémon with this AI art model](https://www.theverge.com/2022/9/26/23372457/pokemon-ai-generator-stable-diffusion-model)
 - [Creative Bloq - This spot-on AI Pokémon generator has me hooked](https://www.creativebloq.com/news/text-to-pokemon-ai-art-generator)
-- [The Gamer- This AI Generates A Pokemon Based On Your Name](https://www.thegamer.com/pokemon-ai-generator/)
+- [The Gamer - This AI Generates A Pokemon Based On Your Name](https://www.thegamer.com/pokemon-ai-generator/)
+- [TechCrunch - Make your very own AI-generated Pokémon-like creature](https://techcrunch.com/2022/09/28/make-your-very-own-ai-generated-pokemon-like-creature/)
 
 and plenty of other places.
