@@ -38,6 +38,16 @@ _Left is the fully fine-tuned model. Right is attention layers only. The right m
 
 An obvious next step is to try and compare the above fine-tuning with a method like [DreamBooth](https://dreambooth.github.io/). If anyone gets round to trying this before I do, please [[find-me:let me know]] how it goes!
 
+## Vivillon is the Rick Astley of Pokemon
+
+Some people pointed out that the model has a tendency to randomly produce a certain Pokemon, Vivillon for seemingly random prompts. Even when it doesn't make Vivillon exactly it still has a strong preference to make circular radially patterned Pokemon when the prompt is a bit more abstract.
+
+<Tweet tweetLink="JanelleCShane/status/1575855505922088960" />
+
+Someone pointed out that Vivillon actually has several variations, each of which is a different Pokemon, this means it appears a bunch of times in the original dataset. The model clearly ended up overfitting to Vivillon, I might make a version where I remove all but one Vivillon, but right now I quite enjoy that Vivillon occasionally appears when you least expect it like a Pokemon Rick Roll.
+
+<Tweet tweetLink="MrCheeze_/status/1575857534874705920" />
+
 ## Coverage
 
 I tweeted about the model when I released it, but seems like it took a little while before it really took off. In particular this tweet seemed to really reach the right audience:
@@ -46,6 +56,7 @@ I tweeted about the model when I released it, but seems like it took a little wh
 
 Since then it's been featured here:
 
+- [The Washington Post - Create surreal Pokémon lookalikes of Jeff Bezos, The Rock and more with AI](https://www.washingtonpost.com/video-games/2022/09/29/pokemon-ai-generator-github/)
 - [The Verge - Turn anyone into a pokémon with this AI art model](https://www.theverge.com/2022/9/26/23372457/pokemon-ai-generator-stable-diffusion-model)
 - [Creative Bloq - This spot-on AI Pokémon generator has me hooked](https://www.creativebloq.com/news/text-to-pokemon-ai-art-generator)
 - [The Gamer - This AI Generates A Pokemon Based On Your Name](https://www.thegamer.com/pokemon-ai-generator/)
