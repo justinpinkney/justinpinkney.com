@@ -61,5 +61,8 @@ Since then it's been featured here:
 - [Creative Bloq - This spot-on AI Pokémon generator has me hooked](https://www.creativebloq.com/news/text-to-pokemon-ai-art-generator)
 - [The Gamer - This AI Generates A Pokemon Based On Your Name](https://www.thegamer.com/pokemon-ai-generator/)
 - [TechCrunch - Make your very own AI-generated Pokémon-like creature](https://techcrunch.com/2022/09/28/make-your-very-own-ai-generated-pokemon-like-creature/)
+- [Nerdist - Turn anything into Pokémon with this new AI program](https://nerdist.com/article/turn-anything-into-pokemon-with-this-ai-program/)
+- [Screen Rant - AI Generator Turns You Into A Pokémon (But You're Not Going To Like It)](https://screenrant.com/pokemon-ai-generator-custom-characters-scary/)
+- [Yahoo - Turn Anything into Pokémon with This New AI Program](https://www.yahoo.com/lifestyle/turn-anything-pok-mon-ai-210003616.html)
 
 and plenty of other places.
