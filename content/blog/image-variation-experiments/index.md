@@ -5,6 +5,10 @@ description: "Playing with interesting ways of using the Stable Diffusion Image 
 cover: output_37_2.jpg
 ---
 
+<p align="center">
+<video controls autoplay="true" src="lighthouse-bf.mp4" loop="true" style="max-width:512px"></video>
+</p>
+
 A bunch of quick experiments for my improved CLIP Image conditioned version of Stable Diffusion v1. Find the actual [model on huggingface hub](https://huggingface.co/lambdalabs/sd-image-variations-diffusers). We'll be using this crop from a Ghibli frame as our test image.
 
 ![](output_6_0.jpg)
@@ -107,6 +111,13 @@ We can also use ddim_eta to make variations of our original, but ones that close
 ![](output_39_5.jpg)
 
 ![](output_39_8.jpg)
+
+We can make more of these steadily ramping up the value of eta and make a variations video:
+
+<p align="center">
+<video controls autoplay="true" src="ghibli-eta.mp4" loop="true" style="max-width:512px"></video>
+</p>
+
 
 
 Last of all we can combine subtle variation (ddim_eta=0.4) with text diff editing:  "ghibli matte painting" -> "dslr leica photo"
