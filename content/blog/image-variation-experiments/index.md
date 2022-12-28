@@ -5,11 +5,13 @@ description: "Playing with interesting ways of using the Stable Diffusion Image 
 cover: output_37_2.jpg
 ---
 
+I've been doing a bunch of quick experiments for my improved CLIP Image conditioned version of Stable Diffusion v1. We can actually do lots of fun stuff with this model including transforming this Ghibli house into a lighthouse!
+
 <p align="center">
 <video controls autoplay="true" src="lighthouse-bf.mp4" loop="true" style="max-width:512px"></video>
 </p>
 
-A bunch of quick experiments for my improved CLIP Image conditioned version of Stable Diffusion v1. Find the actual [model on huggingface hub](https://huggingface.co/lambdalabs/sd-image-variations-diffusers). We'll be using this crop from a Ghibli frame as our test image.
+ First off you can find the actual [model on huggingface hub](https://huggingface.co/lambdalabs/sd-image-variations-diffusers). Throughout the post we'll be using this crop from a Ghibli frame as our test image.
 
 ![](output_6_0.jpg)
 
@@ -23,13 +25,13 @@ That was classifier free guidance scale 4, we can play with different levels of 
 ![](output_10_10.jpg)
 
 
-The image is turned into a CLIP image embedding, this is the condition vector. 0 corresponds to the "unconditional vector" so in addition to the usual classifier free guidance we can play with the length of this vector to control the "strength" of the conditioning. Multiply the vector by 0.25, 0.5, 1, 1.5, 2:
+The image is turned into a CLIP image embedding, this is the condition vector. One thing I noticed is that because I set the unconditional embedding to zeros, scaling a condition vector has the effect of increasing its "strength", this effect is different to the usual classifier free guidance. We can play with the length of this vector to control the "strength" of the conditioning by  multiplying the vector by 0.25, 0.5, 1, 1.5, 2:
 
 ![](output_12_2.jpg)
 
 
 
-We can also mix different embeddings by averaging them together. Let's mix between the embedding for our ghibli image and a matisse painting. 0%, 25%, 50%, 75%, and 100% matisse:
+We can also mix different embeddings by averaging them together. Let's mix between the embedding for our Ghibli image and a matisse painting. 0%, 25%, 50%, 75%, and 100% matisse:
 
 ![](output_14_2.jpg)
 
@@ -44,7 +46,7 @@ Another way to mix is to concatenate the embeddings, yes we can have more than o
 ![](output_16_2.jpg)
 
 
-We can also use text embeddings to mix with our image embedding, we can mix with the word "flowers" to add flowers. At the far right it's only using the text "flowers" (we re-invented a text to image model!). 0%, 25%, 50%, 75%, and 100% "flowers":
+We can also use text embeddings to mix with our image embedding, we can mix with the word "flowers" to add flowers. (The variations model actually works fine with text embeddings btw). At the far right it's only using the text "flowers" (we re-invented a text to image model!). 0%, 25%, 50%, 75%, and 100% "flowers":
 
 ![](output_18_2.jpg)
 
@@ -84,8 +86,9 @@ If we take random crops when computing the embeddings we get zoomed in images mo
 ![](output_28_2.jpg)
 
 
+## Image inversion
 
-Now we play with DDIM inversion, followed by editing, as shown in the DALLE-2 paper. We invert our image, we need to use lots of timesteps.
+Now we play with DDIM inversion, followed by editing, as shown in the DALLE-2 paper. We invert our image using standard DDIM inversion as [in the original stable diffusion repo](https://github.com/pesser/stable-diffusion/blob/main/ldm/models/diffusion/ddim.py#L231)., we need to use lots of timesteps.
 Then check we can decode it to pretty much the same image (if we use cfg it's more saturated). To get good inversion results we use: ddim_steps = 500, start_step=1, cfg scale = 3 (careful with cfg scale! not too high)
 
 For decoding you don't need to use so many timesteps, so it wont take so long, decode with 50 timesteps and you get the original picture back
