@@ -1,0 +1,90 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Blog
+  order: 2
+pagination:
+  data: collections.posts
+  reverse: true
+  size: 5
+permalink: "archive/page-{{ pagination.pageNumber + 1 }}/index.html"
+
+---
+{% css %}
+#page-picker {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    margin: 2px;
+    align-items: center;
+}
+#page-picker .sel {
+    text-align: center;
+    flex: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    transition: background-color .5s;
+}
+
+
+#page-picker a {
+    text-align: center;
+    flex: 1;
+    text-decoration: none;
+    color: blue;
+    margin: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    transition: background-color .5s;
+}
+
+#page-picker a.active {
+    background-color: lightblue;
+    color: lightblue;
+    border-radius: 10px;
+}
+
+#page-picker a:hover:not(.active) {
+    background-color: lightgray;
+}
+
+#page-picker [aria-current='page'] {
+    background-color: white;
+    border-style: solid;
+    border-color: #616c71;
+    border-width: 4px;
+    border-radius: 0.5em;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+{% endcss %}
+
+<h1>Blog</h1>
+
+{% set postslist = pagination.items  | reverse %}
+{% include "postslist.njk" %}
+
+<nav aria-labelledby="my-pagination">
+    <div id="page-picker">
+        {% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}"><<</a>
+        {% else %}<div class="sel"><<</div>
+        {% endif %}
+
+        {% if pagination.href.previous %}<a href="{{ pagination.href.previous }}"><</a>
+        {% else %}<div class="sel"><</div>
+        {% endif %}
+
+    {%- for pageEntry in pagination.pages %}
+        <a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a>
+    {%- endfor %}
+
+        {% if pagination.href.next %}<a href="{{ pagination.href.next }}">></a>
+        {% else %}<div class="sel">></div>
+        {% endif %}
+
+        {% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">>></a>
+        {% else %}<div class="sel">>></div>
+        {% endif %}
+    </div>
+</nav>

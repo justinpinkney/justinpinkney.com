@@ -1,0 +1,17 @@
+# redirect old blog post locations to new
+/toonify-yourself                   /blog/2020/toonify-yourself
+/stylegan-network-blending          /blog/2020/stylegan-network-blending
+/making-toonify                     /blog/2020/making-toonify
+/ukiyoe-dataset                     /blog/2020/ukiyoe-dataset
+/pretrained-stylegan                /blog/2020/pretrained-stylegan
+/ukiyoe-yourself                    /blog/2020/ukiyoe-yourself
+/cakegan                            /blog/2020/cakegan
+/matlab-stylegan                    /blog/2020/matlab-stylegan
+/biophysics                         /blog/2020/biophysics
+/colour-sorter                      /blog/2020/colour-sorter
+/feature-space-input-space          /blog/2020/feature-space-input-space
+/matlab-mtcnn                       /blog/2020/matlab-mtcnn
+/matlab-pix2pix                     /blog/2020/matlab-pix2pix
+/face-edits                         /blog/2021/face-edits
+/pokemon-generator                  /blog/2022/pokemon-generator
+/image-variation-experiments        /blog/2022/image-variation-experiments

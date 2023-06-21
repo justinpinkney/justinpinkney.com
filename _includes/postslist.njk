@@ -1,0 +1,46 @@
+
+{%- css %}
+.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }
+
+.postlist-item {
+	background-color: white;
+    border-style: solid;
+	border-color: #616c71;
+    margin-bottom: 1em;
+    border-width: 6px;
+    padding: 1em;
+    border-radius: 1em;
+	transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+.postlist-item:hover {
+	transform: translate(3px, -5px) rotate(0.5deg);
+	transform-origin: top left;
+	box-shadow: 2px 4px 8px #c24f4faa;
+	background-color: #f2fafe;
+	border-color: #a7bdc8;
+}
+
+li a {
+  text-decoration: none; /* Remove underline from the link */
+  width: 100%
+}
+
+{% endcss %}
+<ol reversed class="postlist">
+{% for post in postslist | reverse %}
+	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+		<a href="{{ post.url }}">
+			{% if post.data.cover %}
+				<div class="cover">
+				{% image './' ~ post.filePathStem | replace('/index', '/') ~ post.data.cover, '', [500]  %}
+				</div>
+			{% endif %}
+
+			<p class="postlist-title">{{ post.data.title }}</p>
+			<p class="postlist-description">{{ post.data.description }}</p>
+			<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
+		</a>
+	</li>
+{% endfor %}
+</ol>

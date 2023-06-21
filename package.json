@@ -1,79 +1,47 @@
 {
-  "name": "gatsby-starter-blog",
-  "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
-  "dependencies": {
-    "@mdx-js/mdx": "^1.6.6",
-    "@mdx-js/react": "^1.6.6",
-    "@pauliescanlon/gatsby-mdx-embed": "0.0.21",
-    "gatsby": "^2.21.37",
-    "gatsby-image": "^2.4.6",
-    "gatsby-plugin-catch-links": "^2.3.4",
-    "gatsby-plugin-feed": "^2.5.11",
-    "gatsby-plugin-feed-mdx": "^1.0.1",
-    "gatsby-plugin-google-analytics": "^2.3.1",
-    "gatsby-plugin-manifest": "^2.4.5",
-    "gatsby-plugin-mdx": "^1.2.16",
-    "gatsby-plugin-offline": "^3.2.3",
-    "gatsby-plugin-react-helmet": "^3.3.1",
-    "gatsby-plugin-react-leaflet": "^2.0.13",
-    "gatsby-plugin-sharp": "^2.6.4",
-    "gatsby-plugin-sharp-exif": "^1.0.2",
-    "gatsby-plugin-sitemap": "^2.4.11",
-    "gatsby-plugin-typography": "^2.5.1",
-    "gatsby-remark-copy-linked-files": "^2.3.2",
-    "gatsby-remark-embed-video": "^3.0.10",
-    "gatsby-remark-images": "^3.3.4",
-    "gatsby-remark-images-grid": "^1.0.2",
-    "gatsby-remark-prismjs": "^3.5.1",
-    "gatsby-remark-responsive-iframe": "^2.4.2",
-    "gatsby-remark-smartypants": "^2.3.1",
-    "gatsby-source-filesystem": "^2.3.4",
-    "gatsby-transformer-json": "^2.4.11",
-    "gatsby-transformer-sharp": "^2.5.2",
-    "leaflet": "^1.6.0",
-    "leaflet-edgebuffer": "^1.0.6",
-    "littlefoot": "^3.3.1",
-    "prismjs": "^1.20.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1",
-    "react-leaflet": "^2.7.0",
-    "react-leaflet-fullscreen": "^1.0.1",
-    "react-typography": "^0.16.19",
-    "remark-wiki-link": "0.0.4",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75",
-    "typography": "^0.16.19",
-    "typography-theme-fairy-gates": "^0.16.19",
-    "typography-theme-st-annes": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
-  },
-  "devDependencies": {
-    "prettier": "2.0.5"
-  },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
-  },
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  }
+	"name": "eleventy-base-blog",
+	"version": "8.0.0",
+	"description": "A starter repository for a blog web site using the Eleventy site generator.",
+	"scripts": {
+		"build": "npx @11ty/eleventy",
+		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
+		"start": "npx @11ty/eleventy --serve --quiet",
+		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+		"benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/11ty/eleventy-base-blog.git"
+	},
+	"author": {
+		"name": "Justin Pinkney",
+		"email": "",
+		"url": "https://justinpinkney.com/"
+	},
+	"license": "MIT",
+	"engines": {
+		"node": ">=14"
+	},
+	"funding": {
+		"type": "opencollective",
+		"url": "https://opencollective.com/11ty"
+	},
+	"bugs": {
+		"url": "https://github.com/11ty/eleventy-base-blog/issues"
+	},
+	"homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy-img": "^3.1.0",
+		"@11ty/eleventy-navigation": "^0.3.5",
+		"@11ty/eleventy-plugin-bundle": "^1.0.4",
+		"@11ty/eleventy-plugin-rss": "^1.2.0",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+		"luxon": "^3.3.0",
+		"markdown-it-anchor": "^8.6.7"
+	},
+	"dependencies": {
+		"eleventy-plugin-embed-everything": "^1.16.0"
+	}
 }

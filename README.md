@@ -1,7 +1,25 @@
-Gatsby source for my homepage at https://www.justinpinkney.com
+# My blog
 
-For more details see: https://www.justinpinkney.com/this-site/
+migrated from Gastby as that's just a major headache.
 
-## Current Status
+Things to do:
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7eb479d6-9dd2-421a-92fa-c7692d0e09c0/deploy-status)](https://app.netlify.com/sites/reverent-jang-278d1a/deploys)
+- make a list of redirects
+
+nice to haves:
+- add littlefoot for footnotes
+- sort out ukiyo-e dataset metadata
+- extract leaflet code
+- indicators for external links
+- add tag link page/section
+- move work page
+
+new blog posts to do:
+
+- tfhq
+- next frame prediction
+- clip image embed conditioned next frame prediction
+- stable diffusion image variations
+- SD face conditioned
+- clip2latent
+- add more tweet threads as short posts
