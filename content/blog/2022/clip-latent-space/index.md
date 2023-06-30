@@ -11,7 +11,7 @@ tags: ["clip", "diffusion"]
     display: flex;
     flex-wrap: wrap;
 }
-.flex-container img {
+.flex-container picture {
     width: 50%;
     height: auto;
     padding: 0.1em;
@@ -25,10 +25,10 @@ Playing with the variations model a bit more. You can take the CLIP image embedd
 3. "colour oil painting" \- "bw photo"
 4. "modern dslr photo" \- "old bw photo"
 
-<div class="flex-container">
 {%set sizes = [200,320,500,800,1024, auto]%}
 {%set widths = "(max-width:640px) 25vw, 320px"%}
 
+<div class="flex-container">
 {% image "media/1587181111003815936-FgbMR7AWQAElgik.png", "", sizes, widths %}
 {% image "media/1587181111003815936-FgbMhdLWIAAXQ7f.png", "", sizes, widths %}
 {% image "media/1587181111003815936-FgbMldfXEAATzIL.png", "", sizes, widths %}
