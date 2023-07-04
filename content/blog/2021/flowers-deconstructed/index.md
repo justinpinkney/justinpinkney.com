@@ -3,7 +3,6 @@ title: Flowers Deconstructed
 date: "2021-04-03"
 description: Flowers exploded and collaged artwork
 tags: ["art"]
-draft: true
 cover: "flowers-deconstructed-01.jpeg"
 ---
 
