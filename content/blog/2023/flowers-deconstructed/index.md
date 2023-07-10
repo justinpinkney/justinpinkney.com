@@ -1,6 +1,6 @@
 ---
 title: Flowers Deconstructed
-date: "2021-04-03"
+date: "2023-07-10"
 description: Flowers exploded and collaged artwork
 tags: ["art"]
 cover: "flowers-deconstructed-01.jpeg"
@@ -78,7 +78,7 @@ cover: "flowers-deconstructed-01.jpeg"
 
 Classic paintings of flowers cut and re-arranged.
 
-Created using public domain flower paintings, [U2net](https://arxiv.org/abs/2005.09007) for segmentation and image magick for collaging.
+A long time ago I made these digitally cutout and collaged images of flowers. They were all created using public domain flower paintings, [U2net](https://arxiv.org/abs/2005.09007) for segmentation and image magick for collaging.
 
 <br />
 

@@ -21,7 +21,11 @@ module.exports = function(eleventyConfig) {
 	});
 	eleventyConfig.addPassthroughCopy("**/*.mp4");
 	eleventyConfig.addPassthroughCopy("**/*.jpg");
+	eleventyConfig.addPassthroughCopy("**/*.jpeg");
+	eleventyConfig.addPassthroughCopy("**/*.png");
 	eleventyConfig.addPassthroughCopy("_redirects");
+	eleventyConfig.addPassthroughCopy("node_modules/interactjs/dist/interact.min.js")
+	eleventyConfig.addPassthroughCopy("node_modules/@11ty/is-land/is-land.js")
 
 	// Run Eleventy when these files change:
 	// https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
