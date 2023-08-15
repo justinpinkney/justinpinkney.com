@@ -1,18 +1,14 @@
 # My blog
 
-migrated from Gastby as that's just a major headache.
+## plugins:
 
-Things to do:
+https://www.npmjs.com/package/eleventy-plugin-embed-everything
 
-- make a list of redirects
+Just put in a link to embed a thing.
 
-nice to haves:
-- add littlefoot for footnotes
-- sort out ukiyo-e dataset metadata
-- extract leaflet code
-- indicators for external links
-- add tag link page/section
-- move work page
+## things to remember
+
+- headings get sluggified, so you can internal link to them, the `#skip` id will also lead to the start of the article
 
 new blog posts to do:
 
