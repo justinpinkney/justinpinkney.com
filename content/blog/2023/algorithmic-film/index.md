@@ -2,7 +2,7 @@
 title: Algorithmic Film Making
 date: "2023-08-13"
 description: Taking an algorithmic film making course and experimenting with video collage
-tags: []
+tags: ["video", "collage"]
 cover: "kaguya-grid.jpg"
 ---
 
