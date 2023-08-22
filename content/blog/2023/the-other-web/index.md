@@ -32,7 +32,7 @@ So I'm trying to share more of what I do here rather than Twitter, and preserve 
 
 We need links, more links, to good things not the usual garbage listicles, click bait and ad vehicles. The authentic, real, handmade web is hard to find unless we all link to it. So here's some of the interesting places/articles I found delving into and around this topic:
 
-- <mmm.page> and <kinopio.club> and the communities around them are two of the places that have a wonderful ethos around what web software (beyond pure webpages) can be and helped me find lots more interesting threads
+- [mmm.page](https://mmm.page) and [Kinopio](https://kinopio.club) and the communities around them are two of the places that have a wonderful ethos around what web software (beyond pure webpages) can be and helped me find lots more interesting threads
 - [html.energy](https://html.energy/podcast.html) has a fantastic podcast with interviews with many interesting people
 - [My website is a shifting house next to a river of knowledge. What could yours be?](https://thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/) Poses great questions about what an analogy for a website might be, "Website as a puddle" anyone? (from the great [Creative Independant](https://thecreativeindependent.com/))
 - [Handmade Web reading list](https://handmade-web.net/library.html)
