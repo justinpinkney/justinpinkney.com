@@ -19,12 +19,15 @@ module.exports = function(eleventyConfig) {
 		"./public/": "/",
 		"./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css"
 	});
-	eleventyConfig.addPassthroughCopy("**/*.mp4");
-	eleventyConfig.addPassthroughCopy("**/*.jpg");
-	eleventyConfig.addPassthroughCopy("**/*.jpeg");
-	eleventyConfig.addPassthroughCopy("**/*.png");
+	eleventyConfig.addPassthroughCopy("content/**/*.mp4");
+	eleventyConfig.addPassthroughCopy("content/**/*.jpg");
+	eleventyConfig.addPassthroughCopy("content/**/*.jpeg");
+	eleventyConfig.addPassthroughCopy("content/**/*.png");
 	eleventyConfig.addPassthroughCopy("_redirects");
 	eleventyConfig.addPassthroughCopy("node_modules/interactjs/dist/interact.min.js")
+	eleventyConfig.addPassthroughCopy({
+		"node_modules/photoswipe/dist/": "/photoswipe/"
+	})
 	eleventyConfig.addPassthroughCopy("node_modules/@11ty/is-land/is-land.js")
 
 	// Run Eleventy when these files change:
@@ -107,6 +110,13 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
+	eleventyConfig.addShortcode("sidenote", function(num, content) {
+		return `<span class="sidenote">
+		<label class="sidenote-label" for="side-note-${num}"><sup>[${num}]</sup></label>
+		<input class="sidenote-checkbox" type="checkbox" id="side-note-${num}"></input>
+		<span class="sidenote-content">${num}. ${content}</span>
+	</span>`;
+	});
 	// Features to make your build faster (when you need them)
 
 	// If your passthrough copy gets heavy and cumbersome, add this line

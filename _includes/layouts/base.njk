@@ -59,7 +59,13 @@
 		</header>
 
 		<main id="skip">
-			{{ content | safe }}
+			<div class="with-sidebar">
+				<div class="not-sidebar">
+					{{ content | safe }}
+				</div>
+
+				{# {% include "sidebar.njk" %} #}
+			</div>
 		</main>
 
 		<footer></footer>

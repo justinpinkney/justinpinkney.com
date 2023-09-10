@@ -1,0 +1,11 @@
+
+<div class="sidebar" style="background:orange">
+    <p>sidebar</p>
+
+<h3>Tags</h3>
+{% for tag in collections.all | getAllTags | filterTagList %}
+	{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+	<a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
+{% endfor %}
+
+</div>

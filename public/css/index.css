@@ -1,3 +1,23 @@
+.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sidebar {
+  /* ↓ The width when the sidebar _is_ a sidebar */
+  flex-basis: 15rem;
+  flex-grow: 1;
+}
+
+.not-sidebar {
+  /* ↓ Grow from nothing */
+  flex-basis: 0;
+  flex-grow: 999;
+  /* ↓ Wrap when the elements are of equal width */
+  min-inline-size: 50%;
+}
+
 /* Defaults */
 :root {
 	--font-family: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
@@ -57,6 +77,69 @@ p:last-child {
 }
 p {
 	line-height: 1.5;
+	text-align: justify;
+}
+
+.sidenote-label {
+	cursor: pointer;
+}
+
+.sidenote-label sup {
+	background-color: #ff1ab080;
+	padding: 0.1em 0.2em;
+	font-weight: bold;
+	border-radius: 20% 25% 20% 24%;
+}
+
+.sidenote-content{
+	float: right;
+	clear: right;
+	margin-right: -60%;
+	width: 50%;
+	margin-top: 0.3rem;
+	margin-bottom: 0;
+	font-size: 0.9rem;
+	line-height: 1.3;
+	vertical-align: baseline;
+
+	background-color: white;
+    border-style: solid;
+	border-color: #616c71;
+    margin-bottom: 1em;
+    border-width:2px;
+	box-shadow: 2px 4px 8px #ff1ab080;
+    padding: 0.8em;
+    border-radius: 0em;
+	text-align: left;
+}
+
+.sidenote:hover .sidenote-content {
+	transform: translate(3px, -5px) rotate(0.5deg);
+	transform-origin: top left;
+	box-shadow: 2px 4px 8px #c24f4faa;
+	background-color: #f2fafe;
+	border-color: #a7bdc8;
+ }
+
+.sidenote-checkbox {
+    display: none;
+}
+
+@media (max-width: 60rem) {
+
+	.sidenote-content {
+		display: none;
+		float: left;
+		left: 1rem;
+		clear: both;
+		width: 95%;
+		margin: 1rem 2.5%;
+		vertical-align: baseline;
+		position: relative;
+	}
+	.sidenote-checkbox:checked + .sidenote-content {
+		display: block;
+	}
 }
 
 li {
@@ -74,10 +157,42 @@ a[href]:active {
 	color: var(--text-color-link-active);
 }
 
+div.caption {
+	text-align: center;
+	color: #004362;
+	font-family: "Inconsolas", monospace;
+	font-size: smaller;
+	padding: 0.5em;
+	padding-bottom: 1em;
+	margin: -0.5em 0.5em 0.5em;
+	background: #ffc0cb94;
+	border-radius: 0.3rem;
+}
+
 main {
 	max-width: 40em;
 	padding: 1rem;
 	margin: 0 auto;
+}
+
+@media screen and (min-width: 40rem) and (max-width: 70rem) {
+    main {
+        margin-right: calc((100% - 40rem) / 2);
+        margin-left: 0;
+    }
+}
+@media screen and (min-width: 70.1rem) and (max-width: 100rem) {
+	main {
+		margin-right: calc(15rem + (100% - 70rem)/2);
+		margin-left: calc((100% - 70rem));
+	}
+}
+
+@media screen and (min-width: 100.1rem) {
+	main {
+		margin-right: auto;
+		margin-left: auto;
+	}
 }
 main :first-child {
 	margin-top: 0;
