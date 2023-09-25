@@ -3,7 +3,10 @@ title: Latent editing with image variations
 date: "2022-10-31"
 description: Exploring the latent space of CLIP with Image variations
 cover: /media/cover01.jpg
-tags: ["clip", "diffusion"]
+tags:
+    - clip
+    - diffusion
+    - image-variation
 ---
 
 {% css %}

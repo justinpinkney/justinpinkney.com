@@ -2,7 +2,9 @@
 title: Stable Diffusion Image Variations
 date: "2023-08-27"
 description: A recap on how and why I trained an 'image variation' version of Stable Diffusion
-tags: []
+tags:
+    - image-variation
+    - diffusion
 cover: "im-vars-banner.jpeg"
 ---
 
