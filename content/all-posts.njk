@@ -1,13 +1,21 @@
 ---
 layout: layouts/home.njk
 eleventyNavigation:
-  key: All Posts
+  key: Posts by tag
   order: 3
 ---
 
-<h1>All Posts</h1>
+<h1>Tags</h1>
 
-<p><a href="/tags">All tags</a></p>
+<div style="text-align:center;margin-bottom:2.5rem">
+{% for tag in collections.all | getAllTags | filterTagList %}
+	{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+	<a href="{{ tagUrl }}" class="post-tag-item">{{ tag }}</a>
+{% endfor %}
+</div>
+
+
+<h1>All Posts</h1>
 
 {% set postslist = collections.posts %}
 {% set d = undefined %}
@@ -21,8 +29,7 @@ eleventyNavigation:
 
 	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
 		<a href="{{ post.url }}">
-
-			<p class="postlist-title">{{ post.data.title }}</p>
+			<p class="postlist-title" style="font-size:larger">{{ post.data.title }}</p>
 		</a>
 	</li>
 {% endfor %}

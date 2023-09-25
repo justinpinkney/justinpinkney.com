@@ -337,6 +337,12 @@ header {
 	align-self: center;
 }
 
+.post-tag-item {
+	text-transform: capitalize;
+	padding: 0.1em 0.25em;
+	font-size:x-large
+}
+
 /* Tags list */
 .post-metadata {
 	display: inline-flex;
