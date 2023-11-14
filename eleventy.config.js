@@ -23,6 +23,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("content/**/*.jpg");
 	eleventyConfig.addPassthroughCopy("content/**/*.jpeg");
 	eleventyConfig.addPassthroughCopy("content/**/*.png");
+	eleventyConfig.addPassthroughCopy("content/**/*.webp");
 	eleventyConfig.addPassthroughCopy("_redirects");
 	eleventyConfig.addPassthroughCopy("node_modules/interactjs/dist/interact.min.js")
 	eleventyConfig.addPassthroughCopy({

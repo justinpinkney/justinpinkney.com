@@ -37,7 +37,7 @@ li a {
 				</div>
 			{% endif %}
 
-			<p class="postlist-title">{{ post.data.title }}</p>
+			<h2 class="postlist-title">{{ post.data.title }}</h2>
 			<p class="postlist-description">{{ post.data.description }}</p>
 			<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
 		</a>
