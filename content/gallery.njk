@@ -1,0 +1,23 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Gallery
+  order: 4
+---
+
+{% css %}
+.gallery {
+	width: 100%;
+	position: absolute;
+	left: 0;
+}
+{% endcss %}
+
+<section class="gallery">
+    {% for image in collections.gallery %}
+		{% set replaced = image.replace('content/', '/') %}
+        <a href="{{replaced}}">
+			<img src="{{replaced}}" alt="", height="100px">
+		</a>
+    {% endfor %}
+</section>

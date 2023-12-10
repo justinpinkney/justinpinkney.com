@@ -44,6 +44,7 @@
 	"dependencies": {
 		"@11ty/is-land": "^4.0.0",
 		"eleventy-plugin-embed-everything": "^1.16.0",
+		"fast-glob": "^3.3.2",
 		"interactjs": "^1.10.17",
 		"photoswipe": "^5.4.0"
 	}

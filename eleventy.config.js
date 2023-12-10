@@ -12,6 +12,18 @@ const pluginImages = require("./eleventy.config.images.js");
 const pluginBlogImages = require("./eleventy.config.blogimages.js");
 const embedEverything = require("eleventy-plugin-embed-everything");
 
+// Import fast-glob package
+const fg = require('fast-glob');
+
+const galleryImages = fg.sync([
+	'**/*.jpg',
+	'**/*.jpeg',
+	'**/*.png',
+	 '**/*.webp',
+	 '!**/_site',
+	 '!**/node_modules',
+	]);
+
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
@@ -31,8 +43,13 @@ module.exports = function(eleventyConfig) {
 	})
 	eleventyConfig.addPassthroughCopy("node_modules/@11ty/is-land/is-land.js")
 
-	// Run Eleventy when these files change:
-	// https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
+
+	//Create collection of gallery images
+	eleventyConfig.addCollection('gallery', function(collection) {
+		// shuffle the array of images
+		galleryImages.sort(() => Math.random() - 0.5);
+		return galleryImages;
+	});
 
 	// Watch content images for the image pipeline.
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");

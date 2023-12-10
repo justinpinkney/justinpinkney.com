@@ -12,8 +12,8 @@ cover: "flowers-deconstructed-01.jpeg"
   position: relative;
   left: 50%;
   right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  margin-left: -45vw;
+  margin-right: -45vw;
 }
 
 .gallery {
@@ -82,7 +82,7 @@ A long time ago I made these digitally cutout and collaged images of flowers. Th
 
 <br />
 
-<div class="full-width">
+<!-- <div class="full-width"> -->
 <br />
 
     <div class="gallery">
@@ -111,4 +111,4 @@ A long time ago I made these digitally cutout and collaged images of flowers. Th
             {% blogImage "flowers-deconstructed-08.jpeg", "" %}
         </div>
     </div>
-</div>
+<!-- </div> -->
