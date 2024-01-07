@@ -3,7 +3,7 @@ title: Text to Pokemon Generator
 date: "2022-09-08"
 description: Fine tuning Stable Diffusion to generate Pokemon
 cover: "poke-prev.jpg"
-tags: 'diffusion'
+tags: ['diffusion','pokemon']
 ---
 
 If you want to just try out the model look here:
