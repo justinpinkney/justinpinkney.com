@@ -6,6 +6,7 @@ cover: m2.jpg
 tags:
     - gan
     - toonify
+    - faces
 ---
 
 __TLDR: If you want a Colab Notebook to toonify yourself click here:__

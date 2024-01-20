@@ -169,6 +169,24 @@ div.caption {
 	border-radius: 0.3rem;
 }
 
+div.callout {
+	margin-top: 0.3rem;
+	margin-bottom: 0;
+	font-size: 0.9rem;
+	line-height: 1.3;
+	vertical-align: baseline;
+
+	background-color: white;
+    border-style: solid;
+	border-color: #616c71;
+    margin-bottom: 1em;
+    border-width:2px;
+	box-shadow: 2px 4px 8px #ff1ab080;
+    padding: 0.8em;
+    border-radius: 0em;
+	text-align: left;
+}
+
 main {
 	max-width: 40em;
 	padding: 1rem;

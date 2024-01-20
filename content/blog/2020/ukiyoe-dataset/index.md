@@ -3,7 +3,7 @@ title: Ukiyo-e faces dataset
 date: "2020-10-29"
 description: A dataset of thousands of high resolution aligned faces from uikyo-e prints
 cover: ukiyoe-dataset.jpg
-tags: ["dataset", "ukiyo-e"]
+tags: ["dataset", "ukiyo-e", "faces"]
 ---
 
 import StructuredData from "../../../src/components/StructuredData"

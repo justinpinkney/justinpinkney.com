@@ -6,6 +6,13 @@ https://www.npmjs.com/package/eleventy-plugin-embed-everything
 
 Just put in a link to embed a thing.
 
+## vscode
+
+snippets:
+
+- ,fig
+- ,cap
+
 ## things to remember
 
 - headings get sluggified, so you can internal link to them, the `#skip` id will also lead to the start of the article

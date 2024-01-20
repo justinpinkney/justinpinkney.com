@@ -3,7 +3,7 @@ title: StyleGAN network blending
 date: "2020-08-25"
 description: Mixing GAN models for weird and wonderful effects
 cover: ukiyoe/41.jpg
-tags: ['gan', 'stylegan', 'toonify', "ukiyo-e"]
+tags: ['gan', 'stylegan', 'toonify', "ukiyo-e", "faces"]
 ---
 
 ## Making Ukiyo-e portraits real

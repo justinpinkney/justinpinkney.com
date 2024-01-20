@@ -3,7 +3,7 @@ title: Style Space Face Editing
 date: "2021-04-08"
 description: A runway app to make silly face edits using the StyleSpace of StyleGAN
 cover: "images/combo.jpg"
-tags: ["gan", "stylegan", "pixel2style2pixel"]
+tags: ["gan", "stylegan", "pixel2style2pixel", "faces"]
 ---
 
 ![](https://github.com/justinpinkney/pixel2style2pixel/raw/master/images/face-edit-runway.gif)

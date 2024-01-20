@@ -3,7 +3,7 @@ title: MATLAB Face Detection with MTCNN 🔎😄
 date: "2020-06-06"
 description: Fast and accurate face detection and alignment in MATLAB with neural networks
 cover: trek-faces.jpg
-tags: ['matlab']
+tags: ['matlab', "faces"]
 ---
 
 __Get a fast and accurate face and facial feature detector for MATLAB [here](https://github.com/matlab-deep-learning/mtcnn-face-detection/releases)__
