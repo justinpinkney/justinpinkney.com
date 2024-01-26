@@ -114,3 +114,19 @@ I also talked a bit about this model, along with a bunch of others, in the [Hugg
 I liked the old StyleGAN Face mixing vibe I got with this model:
 
 https://twitter.com/Buntworthy/status/1592845516127481857
+
+## Some related work
+
+After I [tweeted about this](https://twitter.com/Buntworthy/status/1749179500389109782) blog post a couple of people pointed out some similar work. [Bolei Zhou](https://boleizhou.github.io/) mentioned the great [IDinvert](https://genforce.github.io/idinvert/) from back in the good old days when GANs ruled the image generation roost, and [Yong-Hyun Park](https://twitter.com/hagsaeng_bag) pointed me the way of [this recent interesting paper](https://openaccess.thecvf.com/content/WACV2024/html/Jeong_Training-Free_Content_Injection_Using_H-Space_in_Diffusion_Models_WACV_2024_paper.html) on content injection using the "h-space" of Unet based diffusion models.
+
+{% blogImage "idinvert.jpg", "figure from idinvert paper showing GAN based face mixing" %}
+
+<div class="caption">
+Figure from the paper "In-Domain GAN Inversion for Real Image Editing", amazingly similar to my examples above!
+</div>
+
+{% blogImage "h-space.jpeg", "figure from idinvert paper showing h-space based face mixing" %}
+
+<div class="caption">
+Figure from the paper "Training-free Content Injection using h-space in Diffusion Models". The approach involves some interesting injection of activations into the bottleneck of a pre-trained diffusion model unet.
+</div>
