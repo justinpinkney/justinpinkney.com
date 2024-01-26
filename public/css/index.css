@@ -413,3 +413,13 @@ h2 + .header-anchor {
 	object-fit: cover;
 	border-radius: 5px;
 }
+
+
+a[href^="http://"]:after, a[href^="https://"]:after {
+	display:inline-block;
+    content: " \2197"; /* Unicode character for a northeast arrow */
+    font-size: smaller;
+    color: #ff47d1; /* Bright color */
+    padding: 2px; /* Space around the arrow */
+	text-decoration: none;
+}
