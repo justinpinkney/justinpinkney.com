@@ -3,7 +3,7 @@ pagination:
   data: collections.gallery
   size: 1
   alias: item
-permalink: 'gallery/{{ item.imagePath | replace(".", "-") | slug }}'
+permalink: 'gallery/{{ item.imagePath | replace(".", "-") | slug }}.html'
 layout: layouts/base.njk
 ---
 
