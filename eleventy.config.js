@@ -11,6 +11,7 @@ const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
 const pluginBlogImages = require("./eleventy.config.blogimages.js");
 const embedEverything = require("eleventy-plugin-embed-everything");
+const eleventyGoogleFonts = require("eleventy-google-fonts");
 
 // Import fast-glob package
 const fg = require('fast-glob');
@@ -91,6 +92,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(pluginBundle);
+	eleventyConfig.addPlugin(eleventyGoogleFonts);
 
 	// Filters
 	eleventyConfig.addNunjucksFilter("split", (s, sep) => { return s.split(sep) });
