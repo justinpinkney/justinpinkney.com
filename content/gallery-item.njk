@@ -1,0 +1,32 @@
+---
+pagination:
+  data: collections.gallery
+  size: 1
+  alias: item
+permalink: 'gallery/{{ item.imagePath | replace(".", "-") | slug }}'
+layout: layouts/base.njk
+---
+
+<section class="gallery-item">
+    {% set replaced = item.imagePath.replace('content/', '/') %}
+    <a href="{{replaced}}">
+        <img src="{{replaced}}" alt="" width="100%">
+    </a>
+
+    {% if item.indexFilePath %}
+    <br />
+    <br />
+    <div class="caption">
+    Original blog post:
+        <a href="{{ item.indexFilePath.replace('content/', '/').replace('/index.md', '/') }}">
+        {{ item.indexFilePath.replace('content/', '/').replace('/index.md', '/')}}
+        </a>
+    </div>
+    {% endif %}
+
+    <p>
+        <a href="/gallery">Back to gallery 🖼️</a>
+        <br />
+        <a href="/archive/page-1/">Back to blog 📝</a>
+    </p>
+</section>

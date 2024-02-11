@@ -14,6 +14,8 @@ const embedEverything = require("eleventy-plugin-embed-everything");
 
 // Import fast-glob package
 const fg = require('fast-glob');
+const path = require('path');
+const fs = require('fs');
 
 const galleryImages = fg.sync([
 	'**/*.jpg',
@@ -24,6 +26,25 @@ const galleryImages = fg.sync([
 	 '!**/node_modules',
 	]);
 
+const imageAndIndexFiles = galleryImages.map(imagePath => {
+	let dir = path.dirname(imagePath);
+	let indexFilePath = null;
+
+	// Traverse up looking for index.md that indicates a blog post
+	for (let i = 0; i < 4; i++) {
+		const potentialIndexFilePath = path.join(dir, 'index.md');
+		if (fs.existsSync(potentialIndexFilePath)) {
+			indexFilePath = potentialIndexFilePath;
+			break;
+		}
+		dir = path.dirname(dir); // Go up one level
+	}
+
+	return {
+		imagePath,
+		indexFilePath,
+	};
+});
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
@@ -47,8 +68,8 @@ module.exports = function(eleventyConfig) {
 	//Create collection of gallery images
 	eleventyConfig.addCollection('gallery', function(collection) {
 		// shuffle the array of images
-		galleryImages.sort(() => Math.random() - 0.5);
-		return galleryImages;
+		imageAndIndexFiles.sort(() => Math.random() - 0.5);
+		return imageAndIndexFiles;
 	});
 
 	// Watch content images for the image pipeline.

@@ -15,8 +15,9 @@ eleventyNavigation:
 
 <section class="gallery">
     {% for image in collections.gallery %}
-		{% set replaced = image.replace('content/', '/') %}
-        <a href="{{replaced}}">
+		{% set replaced = image.imagePath.replace('content/', '/') %}
+		{% set page_link = image.imagePath | replace(".", "-") | slug %}
+        <a href="{{ page_link }}">
 			<img src="{{replaced}}" alt="", height="100px">
 		</a>
     {% endfor %}

@@ -36,7 +36,11 @@ A [helpful comment](https://github.com/11ty/eleventy/issues/440) in a GitHub iss
 I still have a few outstanding things I'd like to improve:
 
 - Better layout of the images (hopefully still sticking to plain old css and html if possible)
-- Links back from the images to the blog post where they appear (this is a bit tricky as sometimes I organise the images in subdirectories)
+- ~~Links back from the images to the blog post where they appear (this is a bit tricky as sometimes I organise the images in subdirectories)~~
+
+**UPDATE:** With a little help from GitHub copilot it was actually pretty easy to add a link back to the original blog posts from the images. I find them by looking up the file tree for an `index.md` file that indicates a post, and from that making a templated page I can link to.
+
+{% blogImage "gallery-item.jpeg", "A screenshot of the gallery item page" %}
 
 Now the css is a bit messy and funky in various cases, but that's the fun of of having a website of your own to play with!
 
