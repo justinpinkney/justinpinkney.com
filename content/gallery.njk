@@ -7,18 +7,64 @@ eleventyNavigation:
 
 {% css %}
 .gallery {
-	width: 100%;
-	position: absolute;
-	left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 0px;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+img {
+	width: 100px;
+}
+.img-cover {
+    object-fit: cover;
+}
+
+.img-contain {
+    object-fit: contain;
+}
+
+#toggleButton {
+	text-align: center;
+	font-size: 1.5em;
+    background: none!important;
+	border: none;
+    color: #616C71;
+	padding: 5px;
+	cursor: pointer;
+}
+#buttonWrapper {
+    text-align: center;
 }
 {% endcss %}
 
+<p id="buttonWrapper">
+<button id="toggleButton">⬅️ Pack/Unpack ➡️</button>
+</p>
 <section class="gallery">
     {% for image in collections.gallery %}
 		{% set replaced = image.imagePath.replace('content/', '/') %}
 		{% set page_link = image.imagePath | replace(".", "-") | slug %}
         <a href="{{ page_link }}">
-			<img src="{{replaced}}" alt="", height="100px">
+			<img class="img-cover" src="{{replaced}}" alt="", height="100px">
 		</a>
     {% endfor %}
 </section>
+
+<script>
+	document.getElementById('toggleButton').addEventListener('click', function() {
+    var images = document.querySelectorAll('.gallery img');
+    images.forEach(function(img) {
+        if (img.classList.contains('img-cover')) {
+            img.classList.remove('img-cover');
+            img.classList.add('img-contain');
+        } else {
+            img.classList.remove('img-contain');
+            img.classList.add('img-cover');
+        }
+    });
+});
+</script>
