@@ -17,13 +17,17 @@ eleventyNavigation:
   left: 0;
 }
 img {
+	height: 100px;
 	width: 100px;
+	object-fit: cover;
 }
 .img-cover {
+	height: 100px;
     object-fit: cover;
 }
 
 .img-contain {
+	height: 100px;
     object-fit: contain;
 }
 
@@ -46,11 +50,16 @@ img {
 </p>
 <section class="gallery">
     {% for image in collections.gallery %}
-		{% set replaced = image.imagePath.replace('content/', '/') %}
+		{% set replaced = image.imagePath.replace('content/', './') %}
 		{% set page_link = image.imagePath | replace(".", "-") | slug %}
-        <a href="{{ page_link }}">
-			<img class="img-cover" src="{{replaced}}" alt="", height="100px">
-		</a>
+
+			<div class="thumb">
+				<a href="{{ page_link }}">
+					{% image replaced, "", [100,200,400], [100w] %}
+				</a>
+			</div>
+			{# <img class="img-cover" src="{{replaced}}" alt="", height="100px"> #}
+
     {% endfor %}
 </section>
 
@@ -58,12 +67,12 @@ img {
 	document.getElementById('toggleButton').addEventListener('click', function() {
     var images = document.querySelectorAll('.gallery img');
     images.forEach(function(img) {
-        if (img.classList.contains('img-cover')) {
-            img.classList.remove('img-cover');
-            img.classList.add('img-contain');
-        } else {
+        if (img.classList.contains('img-contain')) {
             img.classList.remove('img-contain');
             img.classList.add('img-cover');
+        } else {
+            img.classList.remove('img-cover');
+            img.classList.add('img-contain');
         }
     });
 });
