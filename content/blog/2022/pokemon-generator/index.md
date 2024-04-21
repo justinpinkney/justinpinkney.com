@@ -31,7 +31,7 @@ Turns out that this is basically the same mechanism that enabled [toonify yourse
 
 ## More experiments
 
-It does seems a bit excessive to fine tune the whole unet as I did in the example above. There are probably lots of different strategies you could adopt trying to freeze different parts of the model, or even try something like [layer swapping](../stylegan-network-blending). One little experiment I tried along these lines to to fine tune only the Attention layers in the the unet. This version helps to preserve the original abilities of the model, but reduces the quality of the Pokemon produced. It's neat the model still remembers how to produce non-pokemon images, but this isn't quite what we want for this application, as it's good that the model ends up producing nothing but Pokemon!
+It does seems a bit excessive to fine tune the whole unet as I did in the example above. There are probably lots of different strategies you could adopt trying to freeze different parts of the model, or even try something like [layer swapping](/blog/2020/stylegan-network-blending/). One little experiment I tried along these lines to to fine tune only the Attention layers in the the unet. This version helps to preserve the original abilities of the model, but reduces the quality of the Pokemon produced. It's neat the model still remembers how to produce non-pokemon images, but this isn't quite what we want for this application, as it's good that the model ends up producing nothing but Pokemon!
 
 {% blogImage "compare.jpg", "" %}
 

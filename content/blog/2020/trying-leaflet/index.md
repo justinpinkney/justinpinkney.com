@@ -67,7 +67,7 @@ Leaflet then provides a pan and zoomable display of the image. Leaflet is normal
 
 _One small issue with the above is that Leaflet doesn't like fractional tiles so there are currently some weird edge effects which I could solve by making sure I pad all the tiles to the full dimensions._
 
-Incorporating leaflet into a Gatsby site is happily very simple[^1] thanks to the [Gatsby React-Leaflet plugin](https://github.com/dweirich/gatsby-plugin-react-leaflet) which takes care of properly wrapping up the existing React-leaflet library (which itself makes Leaflet accessible as React components). Writing the r[eact component required to display the image](https://github.com/justinpinkney/justinpinkney.com/blob/master/src/components/BigImage.js) is very straightforward and then I can directly write the following in my markdown file to give the zoomable image at the top of the page.
+Incorporating leaflet into a Gatsby site is happily very simple[^1] thanks to the [Gatsby React-Leaflet plugin](https://github.com/dweirich/gatsby-plugin-react-leaflet) which takes care of properly wrapping up the existing React-leaflet library (which itself makes Leaflet accessible as React components). Writing the react component required to display the image is very straightforward and then I can directly write the following in my markdown file to give the zoomable image at the top of the page.
 
 ```markdown
 <BigImage
