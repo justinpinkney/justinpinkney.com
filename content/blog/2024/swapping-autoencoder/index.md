@@ -14,7 +14,7 @@ I'm not going to describe how it's trained (the [paper](https://arxiv.org/abs/20
 
 {% blogImage "swapping-ae-schematic.jpg", "Schematic of the Swapping Autoencoder architecture" %}
 <div class="caption">
-Schematic of the training scheme of Swapping Autoencoder from: ["Swapping Autoencoder for Deep Image Manipulation"](https://arxiv.org/abs/2007.00653)
+Schematic of the training scheme of Swapping Autoencoder from: <a href="(https://arxiv.org/abs/2007.00653">"Swapping Autoencoder for Deep Image Manipulation"</a>
 </div>
 
 The intended way to use the model was to take the content representation from one image, and the style from another to do a sort of "style transfer", although each model was limited to a single domain like landscapes, churches etc. So it was more like a texture/appearance transfer. But there were a lot more interesting things you could do with these broken down latent codes. And I spent a lot of time experimenting witht things and made a tremendous number of images and videos I found fascinating, and here are a bunch of them:
