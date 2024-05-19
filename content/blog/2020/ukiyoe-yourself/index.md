@@ -3,7 +3,7 @@ title: Ukiyo-e Yourself with StyleGAN 2
 date: "2020-06-10"
 description: Transforming normal faces to Ukiyo-e style portraits using Generative Adversarial Networks
 cover: mr79.jpg
-tags: ["ukiyo-e", "gan", "stylegan", "faces"]
+tags: ["ukiyo-e", "gan", "stylegan", "faces", "pix2pix"]
 ---
 <!--
 {%- css %}
