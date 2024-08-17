@@ -6,11 +6,7 @@ cover: ukiyoe-dataset.jpg
 tags: ["dataset", "ukiyo-e", "faces"]
 ---
 
-import StructuredData from "../../../src/components/StructuredData"
-
-<StructuredData />
-
-__[Download the dataset: V2](https://drive.google.com/file/d/1zEgVLrKVp8oCZuX0NENcAeh-kdaKJzNG/view?usp=sharing)__ ![]("https://i.creativecommons.org/l/by-sa/4.0/80x15.png)
+__[Download the dataset: V2](https://drive.google.com/file/d/1zEgVLrKVp8oCZuX0NENcAeh-kdaKJzNG/view?usp=sharing)__ ![https://creativecommons.org/licenses/by-sa/4.0/](https://i.creativecommons.org/l/by-sa/4.0/80x15.png)
 
 {% blogImage "ukiyoe-dataset.jpg", "" %}
 
@@ -72,7 +68,7 @@ If using the dataset please cite as "Aligned ukiyo-e faces dataset, Justin Pinkn
       author = {Pinkney, Justin N. M.},
       title = {Aligned Ukiyo-e faces dataset},
       year={2020},
-      howpublished= {\url{https://www.justinpinkney.com/ukiyoe-dataset}}
+      howpublished= {\url{https://www.justinpinkney.com/blog/2020/ukiyoe-dataset}}
 }
 ```
 
